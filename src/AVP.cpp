@@ -19,7 +19,7 @@ Diameter::AVP::AVP(const ByteArray& array) :
 
         if (array.length() < guessedSize)
         {
-            throw std::invalid_argument("Data is too small.");
+            throw std::invalid_argument("Can't parse AVP: Data is too small.");
         }
     }
 
@@ -78,4 +78,51 @@ Diameter::AVP::Data& Diameter::AVP::data()
 bool Diameter::AVP::isValid() const
 {
     return m_header.isValid() && m_data.isValid();
+}
+
+Diameter::AVP& Diameter::AVP::operator=(Diameter::AVP&& moved) noexcept
+{
+    m_header = std::move(moved.m_header);
+    m_data   = std::move(moved.m_data);
+
+    return *this;
+}
+
+Diameter::AVP::Header::LengthType Diameter::AVP::calculateLength() const
+{
+    auto headerSize = m_header.calculateSize();
+    auto dataSize = m_data.size();
+
+    dataSize = (dataSize + 3) & 0xFFFFFFFC;
+
+    return headerSize + dataSize;
+}
+
+Diameter::AVP& Diameter::AVP::updateLength()
+{
+    m_header.setAVPLength(calculateLength());
+
+    return *this;
+}
+
+void Diameter::AVP::deploy(ByteArray& byteArray) const
+{
+    byteArray.append(m_header.deploy());
+    byteArray.append(m_data.deploy());
+
+    if (m_data.size() % 4)
+    {
+        auto requiredPadding = 4 - (m_data.size() % 4);
+
+        byteArray.appendMultiple<uint8_t>(0, requiredPadding);
+    }
+}
+
+ByteArray Diameter::AVP::deploy() const
+{
+    ByteArray byteArray(calculateLength());
+
+    deploy(byteArray);
+
+    return byteArray;
 }

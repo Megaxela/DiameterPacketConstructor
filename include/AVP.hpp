@@ -6,6 +6,7 @@
 
 #include <cstdint>
 #include <ByteArray.hpp>
+#include <vector>
 
 namespace Diameter
 {
@@ -15,8 +16,6 @@ namespace Diameter
     class AVP
     {
     public:
-
-        using LengthType = uint32_t;
 
         /**
          * @brief Constructor class for building Diameter AVPs header.
@@ -30,6 +29,7 @@ namespace Diameter
 
             using AVPCodeType = uint32_t;
             using VendorIdType = uint32_t;
+            using LengthType = uint32_t;
 
             /**
              * @brief Constructor class for building AVPs header flags.
@@ -45,7 +45,9 @@ namespace Diameter
                  */
                 enum class Bits
                 {
-                    VendorSpecific = 0b10000000, Mandatory = 0b01000000, P = 0b00100000
+                      VendorSpecific = 0b10000000
+                    , Mandatory      = 0b01000000
+                    , P              = 0b00100000
                 };
 
                 /**
@@ -63,6 +65,12 @@ namespace Diameter
                  * @brief Move constructor.
                  */
                 Flags(Flags&& rhs) noexcept;
+
+                /**
+                 * @brief Copy constructor.
+                 * @param rhs
+                 */
+                Flags(const Flags& rhs) = default;
 
                 /**
                  * @brief Method for setting bit value.
@@ -86,11 +94,24 @@ namespace Diameter
                 Type deploy() const;
 
                 /**
-                 * @brief Метод для проверки корректности
-                 * AVP.
-                 * @return Корректность AVP.
+                 * @brief Method for checking are flags valid.
+                 * @return Flags validness.
                  */
                 bool isValid() const;
+
+                /**
+                 * @brief Move operator.
+                 * @param rhs Moved object.
+                 * @return Reference to constructor.
+                 */
+                Flags& operator=(Flags&& rhs) noexcept;
+
+                /**
+                 * @brief Copy operator.
+                 * @param rhs Copied obejct.
+                 * @return
+                 */
+                Flags& operator=(const Flags& rhs) = default;
 
             private:
                 Type m_bits;
@@ -112,6 +133,12 @@ namespace Diameter
              * @brief Move constructor.
              */
             Header(Header&& moved) noexcept;
+
+            /**
+             * @brief Copy constructor.
+             * @param copied Copy.
+             */
+            Header(const Header& copied) = default;
 
             /**
              * @brief Method for setting AVP code.
@@ -198,6 +225,40 @@ namespace Diameter
              */
             bool isValid() const;
 
+            /**
+             * @brief Method for calculating header size
+             * based on internal state.
+             * @return Header length.
+             */
+            LengthType calculateSize() const;
+
+            /**
+             * @brief Method for deploying AVP header.
+             * @return Byte array.
+             */
+            ByteArray deploy() const;
+
+            /**
+             * @brief Method for deploying AVP header to
+             * existing byte array. Byte array will be appended.
+             * @param byteArray Byte array.
+             */
+            void deploy(ByteArray& byteArray) const;
+
+            /**
+             * @brief Move operator.
+             * @param rhs Moved object.
+             * @return Reference to constructor.
+             */
+            Header& operator=(Header&& rhs) noexcept;
+
+            /**
+             * @brief Copy operator.
+             * @param rhs Copied object.
+             * @return Reference to constructor.
+             */
+            Header& operator=(const Header& rhs) = default;
+
         private:
             AVPCodeType m_avpCode;
             Flags m_flags;
@@ -214,6 +275,9 @@ namespace Diameter
         class Data
         {
         public:
+
+            using AVPContainer = std::vector<AVP>;
+
             /**
              * @brief Default constructor.
              */
@@ -230,6 +294,12 @@ namespace Diameter
              * @brief Move constructor.
              */
             Data(Data&& moved) noexcept;
+
+            /**
+             * @brief Copy constructor.
+             * @param copied Copied.
+             */
+            Data(const Data& copied) = default;
 
             /**
              * @brief Method for setting byte array as data.
@@ -304,29 +374,39 @@ namespace Diameter
             uint64_t toUnsigned64() const;
 
             /**
-             * @brief Method for adding AVP's as data.
-             * @param avp AVP constructor.
+             * @brief Method for getting avps
+             * from data value. If it's impossible
+             * std::invalid_argument exceptionw will
+             * be thrown.
+             * @return Container with AVPs.
+             */
+            AVPContainer toAVPs() const;
+
+            /**
+             * @brief Method for appending AVP
+             * to data.
+             * @param avp AVP object.
              * @return Reference to constructor.
              */
-            Data& addAVP(AVP avp);
+            Data& addAVP(const AVP& avp);
 
             /**
-             * @brief Method for counting number of
-             * possible AVP's
-             * @return Number of AVPs. If it's impossible
-             * to count AVPs, std::invalid_argument exception
-             * will be thrown.
+             * @brief Method for adding AVPs from range
+             * @tparam InputIterator Input iterator type.
+             * @param first First iterator.
+             * @param last Last iterator.
+             * @return Reference to constructor.
              */
-            uint32_t numberOfAVPs() const;
+            template<typename InputIterator>
+            Data& addAVP(InputIterator first, InputIterator last)
+            {
+                for (; first != last; ++first)
+                {
+                    addAVP(*first);
+                }
 
-            /**
-             * @brief Method for getting AVP by index. If
-             * there is no such index, std::invalid_argument exception
-             * will be thrown.
-             * @param index Индекс AVP.
-             * @return AVP.
-             */
-            AVP avp(uint32_t index) const;
+                return *this;
+            }
 
             /**
              * @brief Method for getting data size in bytes.
@@ -339,6 +419,33 @@ namespace Diameter
              * @return Is valid.
              */
             bool isValid() const;
+
+            /**
+             * @brief Method for deploying Data.
+             * @return Data.
+             */
+            ByteArray deploy() const;
+
+            /**
+             * @brief Method for deploying Data.
+             * Data will be appended to ByteArray.
+             * @param byteArray Byte Array.
+             */
+            void deploy(ByteArray& byteArray) const;
+
+            /**
+             * @brief Move operator.
+             * @param rhs Moved object.
+             * @return Reference to constructor
+             */
+            Data& operator=(Data&& rhs) noexcept;
+
+            /**
+             * @brief Copy operator.
+             * @param rhs Copied object.
+             * @return Reference to constructor.
+             */
+            Data& operator=(const Data& rhs) = default;
 
         private:
             ByteArray m_value;
@@ -361,6 +468,12 @@ namespace Diameter
          * @brief Move constructor.
          */
         AVP(AVP&& moved) noexcept;
+
+        /**
+         * @brief Copy constructor.
+         * @param copied Copied.
+         */
+        AVP(const AVP& copied) = default;
 
         /**
          * @brief Method for setting AVP's header.
@@ -405,6 +518,47 @@ namespace Diameter
          * @return Is AVP valid.
          */
         bool isValid() const;
+
+        /**
+         * @brief Move operator.
+         * @param moved Moved.
+         * @return Reference to constructor.
+         */
+        AVP& operator=(AVP&& moved) noexcept;
+
+        /**
+         * @brief Copy operator.
+         * @param copied Copied.
+         * @return Reference to constructor.
+         */
+        AVP& operator=(const AVP& copied) = default;
+
+        /**
+         * @brief Method for calculating actual
+         * avp length.
+         * @return AVP length.
+         */
+        AVP::Header::LengthType calculateLength() const;
+
+        /**
+         * @brief Method for updating length value.
+         * @return Reference to constructor.
+         */
+        AVP& updateLength();
+
+        /**
+         * @brief Method for serializing AVP to
+         * byte array.
+         * @return Byte array.
+         */
+        ByteArray deploy() const;
+
+        /**
+         * @brief Method for serializing AVP to
+         * byte array. AVP will be appended.
+         * @param byteArray Byte array.
+         */
+        void deploy(ByteArray& byteArray) const;
 
     private:
         Header m_header;

@@ -62,6 +62,18 @@ namespace Diameter
                 explicit Flags(Type flags);
 
                 /**
+                 * @brief Move constructor.
+                 * @param moved Moved object.
+                 */
+                Flags(Flags&& moved) noexcept;
+
+                /**
+                 * @brief Copy constructor.
+                 * @param flags Copy.
+                 */
+                Flags(const Flags& flags);
+
+                /**
                  * @brief Method for setting bit value.
                  * @param bit Bit.
                  * @param value Value.
@@ -88,6 +100,13 @@ namespace Diameter
                  */
                 Type deploy() const;
 
+                /**
+                 * @brief Move operator.
+                 * @param moved Object to be moved.
+                 * @return Reference to constructor.
+                 */
+                Flags& operator=(Flags&& moved) noexcept;
+
             private:
                 Type m_bits;
             };
@@ -102,6 +121,18 @@ namespace Diameter
              * @param data Byte array.
              */
             explicit Header(const ByteArray& array);
+
+            /**
+             * @brief Move constructor.
+             * @param moved Moved element.
+             */
+            Header(Header&& moved) noexcept;
+
+            /**
+             * @brief Copy constructor.
+             * @param copied Copied.
+             */
+            Header(const Header& copied);
 
             /**
              * @brief Method for setting diameter packet version.
@@ -150,7 +181,7 @@ namespace Diameter
              * @param flags Flags value.
              * @return Flags constructor.
              */
-            Header& setCommandFlags(const Flags& flags);
+            Header& setCommandFlags(Flags flags);
 
             /**
              * @brief Method for getting command flags.
@@ -237,13 +268,46 @@ namespace Diameter
              * @brief Method for getting End-To-End identifier.
              * @return End-To-End value.
              */
-            ETEType& eteIdentifier() const;
+            ETEType eteIdentifier() const;
+
+            /**
+             * @brief Method for getting End-To-End identifier.
+             * @return End-To-End value.
+             */
+            ETEType& eteIdentifier();
 
             /**
              * @brief Method for checking packet validness.
              * @return Packet validness.
              */
             bool isValid() const;
+
+            /**
+             * @brief Move operator.
+             * @param rhs Moved object.
+             * @return Reference to constructor.
+             */
+            Header& operator=(Header&& rhs) noexcept;
+
+            /**
+             * @brief Copy operator.
+             * @param rhs Copied object.
+             * @return Reference to constructor.
+             */
+            Header& operator=(const Header& rhs) = default;
+
+            /**
+             * @brief Method for deploying header as byte array.
+             * @return Byte array.
+             */
+            ByteArray deploy() const;
+
+            /**
+             * @brief Method for deploying header as byte array.
+             * Header will be appended to deploy.
+             * @param byteArray Byte array.
+             */
+            void deploy(ByteArray& byteArray) const;
 
         private:
             VersionType m_version;
@@ -253,9 +317,141 @@ namespace Diameter
             ApplicationIdType m_applicationId;
             HBHType m_hopByHop;
             ETEType m_endToEnd;
-
-            std::vector<AVP> m_avps;
         };
+
+        /**
+         * @brief Default constructor.
+         */
+        Packet();
+
+        /**
+         * @brief Parsing constructor.
+         * @param byteArray Byte array.
+         */
+        explicit Packet(const ByteArray& byteArray);
+
+        /**
+         * @brief Move constructor.
+         * @param moved Move constructor.
+         */
+        Packet(Packet&& moved) noexcept;
+
+        /**
+         * @brief Copy constructor.
+         * @param packet Copy constructor.
+         */
+        Packet(const Packet& packet) = default;
+
+        /**
+         * @brief Method for setting diameter packet header.
+         * @param header Packet header.
+         * @return Reference to constructor.
+         */
+        Packet& setHeader(Header header);
+
+        /**
+         * @brief Method for getting diameter packet header.
+         * @return Header.
+         */
+        Header header() const;
+
+        /**
+         * @brief Method for getting diameter packet header.
+         * @return Header.
+         */
+        Header& header();
+
+        /**
+         * @brief Method for adding AVP to packet.
+         * @param avp AVP object.
+         * @return Reference to constructor.
+         */
+        Packet& addAVP(AVP avp);
+
+        /**
+         * @brief Method for getting AVP by index.
+         * If there is no AVP with this index,
+         * std::invalid_argument exception will be
+         * thrown.
+         * @param index Index.
+         * @return AVP.
+         */
+        AVP avp(uint32_t index) const;
+
+        /**
+         * @brief Method for getting AVP by index.
+         * If there is no AVP with this index,
+         * std::invalid_argument exception will be
+         * thrown.
+         * @param index Index.
+         * @return AVP.
+         */
+        AVP& avp(uint32_t index);
+
+        /**
+         * @brief Method for replacing AVPs.
+         * @param avp AVP object.
+         * @param index AVP placing index.
+         * @return Reference to constructor.
+         */
+        Packet& replaceAVP(AVP avp, uint32_t index);
+
+        /**
+         * @brief Method for getting number of AVPs.
+         * @return Number of AVPs.
+         */
+        uint32_t numberOfAVPs() const;
+
+        /**
+         * @brief Method for checking is packet valid.
+         * @return Packet validness.
+         */
+        bool isValid() const;
+
+        /**
+         * @brief Move operator.
+         * @param moved Moved.
+         * @return Reference to constructor.
+         */
+        Packet& operator=(Packet&& moved) noexcept;
+
+        /**
+         * @brief Copy operator.
+         * @param copied Copied.
+         * @return Reference to constructor.
+         */
+        Packet& operator=(const Packet& copied) = default;
+
+        /**
+         * @brief Method for deploying packet as byte array.
+         * @return Byte array.
+         */
+        ByteArray deploy() const;
+
+        /**
+         * @brief Method for calculating actual packet length.
+         * @return Actual packet length.
+         */
+        Header::MessageLengthType calculateLength() const;
+
+        /**
+         * @brief Method for updating length in header.
+         * @return Reference to constructor.
+         */
+        Packet& updateLength();
+
+        /**
+         * @brief Method for deploying packet as byte array.
+         * Packet will be appended to deploy.
+         * @param byteArray Byte array.
+         */
+        void deploy(ByteArray& byteArray) const;
+
+    private:
+
+        Header m_header;
+
+        std::vector<AVP> m_avps;
     };
 }
 
