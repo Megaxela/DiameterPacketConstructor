@@ -1,0 +1,36 @@
+cmake_minimum_required(VERSION 3.8)
+project(DiameterPacketConstructor)
+
+set(CMAKE_CXX_STANDARD 11)
+
+include_directories(
+        include
+        libraries/ByteArray/include
+)
+
+set(CMAKE_CXX_FLAGS "-ansi \
+                     -pedantic \
+                     -Wabi \
+                     -Wall \
+                     -Wextra \
+                     -Weffc++ \
+                     -Woverloaded-virtual \
+                     -Winit-self \
+                     -Wunreachable-code")
+
+add_subdirectory(libraries/ByteArray)
+
+set(INCLUDE_FILES
+        include/Packet.hpp
+        include/AVP.hpp)
+
+set(SOURCE_FILES
+        src/Packet.cpp
+        src/AVP.cpp src/PacketHeader.cpp src/PacketHeaderFlags.cpp src/AVPHeader.cpp src/AVPHeaderFlags.cpp)
+
+add_library(DiameterPacketConstructor STATIC
+        ${INCLUDE_FILES}
+        ${SOURCE_FILES}
+)
+
+target_link_libraries(DiameterPacketConstructor ByteArray)

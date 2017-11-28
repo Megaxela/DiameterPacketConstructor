@@ -60,12 +60,17 @@ namespace Diameter
                 explicit Flags(Type array);
 
                 /**
+                 * @brief Move constructor.
+                 */
+                Flags(Flags&& rhs) noexcept;
+
+                /**
                  * @brief Method for setting bit value.
                  * @param bit Bit.
                  * @param value Value.
                  * @return Reference to constructor.
                  */
-                Flags &setFlag(Bits bit, bool value);
+                Flags& setFlag(Bits bit, bool value);
 
                 /**
                  * @brief Method for getting bit value.
@@ -101,7 +106,12 @@ namespace Diameter
              * @param array Byte array.
              * @param size Byte array size.
              */
-            explicit Header(uint8_t *data, uint32_t size);
+            explicit Header(const ByteArray& byteArray);
+
+            /**
+             * @brief Move constructor.
+             */
+            Header(Header&& moved) noexcept;
 
             /**
              * @brief Method for setting AVP code.
@@ -109,7 +119,7 @@ namespace Diameter
              * @param code AVP code.
              * @return Reference to constructor.
              */
-            Header &setAVPCode(AVPCodeType code);
+            Header& setAVPCode(AVPCodeType code);
 
             /**
              * @brief Method for getting AVP code.
@@ -128,7 +138,7 @@ namespace Diameter
              * @param flags AVP flags constructor.
              * @return Reference to constructor.
              */
-            Header &setFlags(const Flags &flags);
+            Header& setFlags(const Flags& flags);
 
             /**
              * @brief Method for getting AVP flags.
@@ -140,7 +150,7 @@ namespace Diameter
              * @brief Method for getting AVP flags.
              * @return AVP flags.
              */
-            Flags &flags();
+            Flags& flags();
 
             /**
              * @brief Method for setting AVP length. (With header)
@@ -149,7 +159,7 @@ namespace Diameter
              * @param length AVP length. Available values [0, 16777215]
              * @return Reference to constructor.
              */
-            Header &setAVPLength(uint32_t length);
+            Header& setAVPLength(uint32_t length);
 
             /**
              * @brief Method for getting AVP length.
@@ -161,7 +171,7 @@ namespace Diameter
              * @brief Method for getting AVP length.
              * @return AVP length.
              */
-            LengthType &length();
+            LengthType& length();
 
             /**
              * @brief Method for setting Vendor Id.
@@ -171,7 +181,7 @@ namespace Diameter
              * @param id Vendor Id.
              * @return Reference to constructor.
              */
-            Header &setVendorID(VendorIdType id);
+            Header& setVendorID(VendorIdType id);
 
             /**
              * @brief Method for getting Vendor Id.
@@ -193,7 +203,6 @@ namespace Diameter
             Flags m_flags;
             LengthType m_length;
             VendorIdType m_vendorId;
-            Data m_data;
         };
 
         /**
@@ -215,21 +224,19 @@ namespace Diameter
              * @param array Byte array.
              * @param size Byte array size.
              */
-            explicit Data(uint8_t *data, uint32_t size);
+            explicit Data(const ByteArray& byteArray);
 
             /**
-             * @brief Метод для установки в качестве данных
-             * массив байт. Если переданные данные не кратны 4
-             * то данные будут выровнены.
-             * @param value Данные.
-             * @return Ссылка на конструктор.
+             * @brief Move constructor.
              */
+            Data(Data&& moved) noexcept;
+
             /**
              * @brief Method for setting byte array as data.
              * @param value Data.
              * @return Reference to constructor.
              */
-            Data &setOctetString(const ByteArray &value);
+            Data& setOctetString(const ByteArray &value);
 
             /**
              * @brief Method for translating data to octet string.
@@ -243,7 +250,7 @@ namespace Diameter
              * @param value Value.
              * @return Constructor reference.
              */
-            Data &setInteger32(int32_t value);
+            Data& setInteger32(int32_t value);
 
             /**
              * @brief Method for getting signed 32 bit integer.
@@ -257,7 +264,7 @@ namespace Diameter
              * @param value Value.
              * @return Reference to constructor.
              */
-            Data &setInteger64(int64_t value);
+            Data& setInteger64(int64_t value);
 
             /**
              * @brief Method for getting signed 64 bit
@@ -272,7 +279,7 @@ namespace Diameter
              * @param value Value.
              * @return Reference to constructor.
              */
-            Data &setUnsigned32(uint32_t value);
+            Data& setUnsigned32(uint32_t value);
 
             /**
              * @brief Method for getting unsigned 32 bit
@@ -287,7 +294,7 @@ namespace Diameter
              * @param value Value.
              * @return Reference to constructor.
              */
-            Data &setUnsigned64(uint64_t value);
+            Data& setUnsigned64(uint64_t value);
 
             /**
              * @brief Method for getting unsigned 64 bit
@@ -301,7 +308,7 @@ namespace Diameter
              * @param avp AVP constructor.
              * @return Reference to constructor.
              */
-            Data &addAVP(AVP avp);
+            Data& addAVP(AVP avp);
 
             /**
              * @brief Method for counting number of
@@ -344,16 +351,23 @@ namespace Diameter
 
         /**
          * @brief Parsing constructor.
+         * If can't parse - throw std::invalid_argument
+         * exception.
          * @param array Byte array.
          */
         explicit AVP(const ByteArray &array);
+
+        /**
+         * @brief Move constructor.
+         */
+        AVP(AVP&& moved) noexcept;
 
         /**
          * @brief Method for setting AVP's header.
          * @param header Header..
          * @return Reference to constructor.
          */
-        AVP &setHeader(const Header &header);
+        AVP& setHeader(const Header& header);
 
         /**
          * @brief Method for getting AVP's header.
@@ -365,14 +379,14 @@ namespace Diameter
          * @brief Method for getting AVP's header.
          * @return AVP's header.
          */
-        Header &header();
+        Header& header();
 
         /**
          * @brief Method for setting AVPs data.
          * @param data Data.
          * @return Reference to constructor.
          */
-        AVP &setData(const Data &data);
+        AVP& setData(const Data& data);
 
         /**
          * @brief Method for getting AVPs data.
@@ -384,7 +398,7 @@ namespace Diameter
          * @brief Method for getting AVPs data.
          * @return Data.
          */
-        Data &data();
+        Data& data();
 
         /**
          * @brief Method for checking AVP's valid.
