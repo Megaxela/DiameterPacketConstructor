@@ -44,10 +44,10 @@ namespace Diameter
 
                 enum class Bits
                 {
-                      Request       = 0b10000000 //< Request - if this bit is set - this packet is a request. Otherwise it's answer.
-                    , Proxiable     = 0b01000000 //< Proxiable - if this bit set - this message can be proxied. Otherwise it has to be proxied locally.
-                    , Error         = 0b00100000 //< Error - if this bit is set - this message contains protocol error.
-                    , ReTransmitted = 0b00010000 //< Potentially re-transmitted message - eg. RFC-3588
+                      Request       = (1 << 7) //< 0b10000000 Request - if this bit is set - this packet is a request. Otherwise it's answer.
+                    , Proxiable     = (1 << 6) //< 0b01000000 Proxiable - if this bit set - this message can be proxied. Otherwise it has to be proxied locally.
+                    , Error         = (1 << 5) //< 0b00100000 Error - if this bit is set - this message contains protocol error.
+                    , ReTransmitted = (1 << 4) //< 0b00010000 Potentially re-transmitted message - eg. RFC-3588
                 };
 
                 /**

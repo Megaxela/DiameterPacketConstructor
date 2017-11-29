@@ -45,9 +45,9 @@ namespace Diameter
                  */
                 enum class Bits
                 {
-                      VendorSpecific = 0b10000000
-                    , Mandatory      = 0b01000000
-                    , Protected      = 0b00100000
+                      VendorSpecific = (1 << 7) // 0b10000000
+                    , Mandatory      = (1 << 6) // 0b01000000
+                    , Protected      = (1 << 5) // 0b00100000
                 };
 
                 /**
