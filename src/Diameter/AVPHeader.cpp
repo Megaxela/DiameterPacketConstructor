@@ -1,4 +1,4 @@
-#include <AVP.hpp>
+#include <Diameter/AVP.hpp>
 
 Diameter::AVP::Header::Header() :
     m_avpCode(0),

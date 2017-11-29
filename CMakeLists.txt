@@ -17,17 +17,17 @@ if (${DIAMETER_BUILD_TESTS})
 endif()
 
 set(INCLUDE_FILES
-        include/Packet.hpp
-        include/AVP.hpp)
+        include/Diameter/Packet.hpp
+        include/Diameter/AVP.hpp)
 
 set(SOURCE_FILES
-        src/Packet.cpp
-        src/AVP.cpp
-        src/PacketHeader.cpp
-        src/PacketHeaderFlags.cpp
-        src/AVPHeader.cpp
-        src/AVPHeaderFlags.cpp
-        src/AVPData.cpp
+        src/Diameter/Packet.cpp
+        src/Diameter/AVP.cpp
+        src/Diameter/PacketHeader.cpp
+        src/Diameter/PacketHeaderFlags.cpp
+        src/Diameter/AVPHeader.cpp
+        src/Diameter/AVPHeaderFlags.cpp
+        src/Diameter/AVPData.cpp
         )
 
 add_library(DiameterPacketConstructor STATIC

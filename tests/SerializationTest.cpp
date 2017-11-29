@@ -1,6 +1,6 @@
 
 #include <gtest/gtest.h>
-#include <Packet.hpp>
+#include <Diameter/Packet.hpp>
 
 static ByteArray raw = ByteArray::fromHex(
     "010000648000011a000000007ddf9367"

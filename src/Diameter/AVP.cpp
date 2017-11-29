@@ -1,4 +1,4 @@
-#include <AVP.hpp>
+#include <Diameter/AVP.hpp>
 
 Diameter::AVP::AVP() :
     m_header(),

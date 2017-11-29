@@ -1,4 +1,4 @@
-#include <AVP.hpp>
+#include <Diameter/AVP.hpp>
 
 Diameter::AVP::Data::Data() :
     m_value()
