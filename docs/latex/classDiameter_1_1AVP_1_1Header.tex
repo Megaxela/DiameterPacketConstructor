@@ -1,0 +1,384 @@
+\hypertarget{classDiameter_1_1AVP_1_1Header}{}\section{Diameter\+:\+:A\+VP\+:\+:Header Class Reference}
+\label{classDiameter_1_1AVP_1_1Header}\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+
+
+Constructor class for building Diameter A\+V\+Ps header.  
+
+
+
+
+{\ttfamily \#include $<$A\+V\+P.\+hpp$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Flags}
+\begin{DoxyCompactList}\small\item\em Constructor class for building A\+V\+Ps header flags. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_a376736aad210069e41752c199492d52e}\label{classDiameter_1_1AVP_1_1Header_a376736aad210069e41752c199492d52e}} 
+using {\bfseries A\+V\+P\+Code\+Type} = uint32\+\_\+t
+\item 
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_aca7a93fe1893b5ad6a778957e28a0e18}\label{classDiameter_1_1AVP_1_1Header_aca7a93fe1893b5ad6a778957e28a0e18}} 
+using {\bfseries Vendor\+Id\+Type} = uint32\+\_\+t
+\item 
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_a76971d359a15e156b6c663cf0d9f4ff7}\label{classDiameter_1_1AVP_1_1Header_a76971d359a15e156b6c663cf0d9f4ff7}} 
+using {\bfseries Length\+Type} = uint32\+\_\+t
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_a2b5517008e00ca03e5ed873e3c69eeb0}\label{classDiameter_1_1AVP_1_1Header_a2b5517008e00ca03e5ed873e3c69eeb0}} 
+\hyperlink{classDiameter_1_1AVP_1_1Header_a2b5517008e00ca03e5ed873e3c69eeb0}{Header} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Header_ac08a910e8453759d348294223bc35e2f}{Header} (const Byte\+Array \&byte\+Array)
+\begin{DoxyCompactList}\small\item\em Parsing constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_a283aed1b1f1d8f76cdef476ef73e81e9}\label{classDiameter_1_1AVP_1_1Header_a283aed1b1f1d8f76cdef476ef73e81e9}} 
+\hyperlink{classDiameter_1_1AVP_1_1Header_a283aed1b1f1d8f76cdef476ef73e81e9}{Header} (\hyperlink{classDiameter_1_1AVP_1_1Header}{Header} \&\&moved) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Header_ae37e5cbd056bb99cb583f5ec7e4285d6}{Header} (const \hyperlink{classDiameter_1_1AVP_1_1Header}{Header} \&copied)=default
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Header}{Header} \& \hyperlink{classDiameter_1_1AVP_1_1Header_a74ba1debad513ac3eaebf760228ee9c0}{set\+A\+V\+P\+Code} (A\+V\+P\+Code\+Type code)
+\begin{DoxyCompactList}\small\item\em Method for setting \hyperlink{classDiameter_1_1AVP}{A\+VP} code. R\+F\+C-\/3588 defines field size as 32 bit (4 bytes). \end{DoxyCompactList}\item 
+A\+V\+P\+Code\+Type \hyperlink{classDiameter_1_1AVP_1_1Header_a4cf4fb50efbf6e3f6de2b50b528ecc3b}{avp\+Code} () const
+\begin{DoxyCompactList}\small\item\em Method for getting \hyperlink{classDiameter_1_1AVP}{A\+VP} code. \end{DoxyCompactList}\item 
+A\+V\+P\+Code\+Type \& \hyperlink{classDiameter_1_1AVP_1_1Header_ad6b105892bcd3dcc952788299797bfa5}{avp\+Code} ()
+\begin{DoxyCompactList}\small\item\em Method for getting \hyperlink{classDiameter_1_1AVP}{A\+VP} code. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Header}{Header} \& \hyperlink{classDiameter_1_1AVP_1_1Header_aa95dc9f6cb0461c20ffbec994cfb4fcd}{set\+Flags} (const \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Flags} \&\hyperlink{classDiameter_1_1AVP_1_1Header_ad100d91021d1db37cc270eefad43ccae}{flags})
+\begin{DoxyCompactList}\small\item\em Method for setting \hyperlink{classDiameter_1_1AVP}{A\+VP} flags. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Flags} \hyperlink{classDiameter_1_1AVP_1_1Header_ad100d91021d1db37cc270eefad43ccae}{flags} () const
+\begin{DoxyCompactList}\small\item\em Method for getting \hyperlink{classDiameter_1_1AVP}{A\+VP} flags. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Flags} \& \hyperlink{classDiameter_1_1AVP_1_1Header_acbebbb2ad082d7400ee9a0ebf105b55b}{flags} ()
+\begin{DoxyCompactList}\small\item\em Method for getting \hyperlink{classDiameter_1_1AVP}{A\+VP} flags. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Header}{Header} \& \hyperlink{classDiameter_1_1AVP_1_1Header_a3d1f5e2e4f7779c6aead3ee8236f7e6d}{set\+A\+V\+P\+Length} (uint32\+\_\+t \hyperlink{classDiameter_1_1AVP_1_1Header_a9a097c1c12f4e81cc47b980a32e2881c}{length})
+\begin{DoxyCompactList}\small\item\em Method for setting \hyperlink{classDiameter_1_1AVP}{A\+VP} length. (With header) R\+F\+C3588 defines this field as 24 bits (3 байта). Available values are \mbox{[}0, 16777215\mbox{]}. \end{DoxyCompactList}\item 
+Length\+Type \hyperlink{classDiameter_1_1AVP_1_1Header_a9a097c1c12f4e81cc47b980a32e2881c}{length} () const
+\begin{DoxyCompactList}\small\item\em Method for getting \hyperlink{classDiameter_1_1AVP}{A\+VP} length. \end{DoxyCompactList}\item 
+Length\+Type \& \hyperlink{classDiameter_1_1AVP_1_1Header_ab2699d4d3cdc98d9649df77e7a546231}{length} ()
+\begin{DoxyCompactList}\small\item\em Method for getting \hyperlink{classDiameter_1_1AVP}{A\+VP} length. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Header}{Header} \& \hyperlink{classDiameter_1_1AVP_1_1Header_a08456b4ff0f04b907e24cf090e22ec49}{set\+Vendor\+ID} (Vendor\+Id\+Type id)
+\begin{DoxyCompactList}\small\item\em Method for setting Vendor Id. If flag {\ttfamily V} is not defined, then if try to set vendor id, std\+::invalid\+\_\+argument exception will be thrown. \end{DoxyCompactList}\item 
+Vendor\+Id\+Type \hyperlink{classDiameter_1_1AVP_1_1Header_ad4d7c49fbcbaed23affaa33a75b518f5}{vendor\+Id} () const
+\begin{DoxyCompactList}\small\item\em Method for getting Vendor Id. If there is no vendor id, std\+::invalid\+\_\+argument exception will be thrown. Check existence with flag {\ttfamily V}. \end{DoxyCompactList}\item 
+bool \hyperlink{classDiameter_1_1AVP_1_1Header_a9c752aeb95b034a3172367d0da0be0c8}{is\+Valid} () const
+\begin{DoxyCompactList}\small\item\em Method for checking \hyperlink{classDiameter_1_1AVP}{A\+VP} header validness. \end{DoxyCompactList}\item 
+Length\+Type \hyperlink{classDiameter_1_1AVP_1_1Header_a6bffec09d8dd172535828e2927a2a480}{calculate\+Size} () const
+\begin{DoxyCompactList}\small\item\em Method for calculating header size based on internal state. \end{DoxyCompactList}\item 
+Byte\+Array \hyperlink{classDiameter_1_1AVP_1_1Header_adb165b56a7160803480621b3789c972a}{deploy} () const
+\begin{DoxyCompactList}\small\item\em Method for deploying \hyperlink{classDiameter_1_1AVP}{A\+VP} header. \end{DoxyCompactList}\item 
+void \hyperlink{classDiameter_1_1AVP_1_1Header_ac56e1a44d35cb41d834581834cf17c25}{deploy} (Byte\+Array \&byte\+Array) const
+\begin{DoxyCompactList}\small\item\em Method for deploying \hyperlink{classDiameter_1_1AVP}{A\+VP} header to existing byte array. Byte array will be appended. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Header}{Header} \& \hyperlink{classDiameter_1_1AVP_1_1Header_a3798fa2ecf6fb48e3d54af4fb874b12c}{operator=} (\hyperlink{classDiameter_1_1AVP_1_1Header}{Header} \&\&rhs) noexcept
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Header}{Header} \& \hyperlink{classDiameter_1_1AVP_1_1Header_a739d3c2f35b5e7bdb1072668e69ae1b5}{operator=} (const \hyperlink{classDiameter_1_1AVP_1_1Header}{Header} \&rhs)=default
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_ae29333d68885ba5197ce774a5766f66c}\label{classDiameter_1_1AVP_1_1Header_ae29333d68885ba5197ce774a5766f66c}} 
+static const uint32\+\_\+t {\bfseries Min\+Size} = 8
+\item 
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_a63cf83d400ab8509f274438339afcf36}\label{classDiameter_1_1AVP_1_1Header_a63cf83d400ab8509f274438339afcf36}} 
+static const uint32\+\_\+t {\bfseries Max\+Size} = 12
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Constructor class for building Diameter A\+V\+Ps header. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_ac08a910e8453759d348294223bc35e2f}\label{classDiameter_1_1AVP_1_1Header_ac08a910e8453759d348294223bc35e2f}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!Header@{Header}}
+\index{Header@{Header}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{Header()}{Header()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Diameter\+::\+A\+V\+P\+::\+Header\+::\+Header (\begin{DoxyParamCaption}\item[{const Byte\+Array \&}]{byte\+Array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Parsing constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & Byte array. \\
+\hline
+{\em size} & Byte array size. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_ae37e5cbd056bb99cb583f5ec7e4285d6}\label{classDiameter_1_1AVP_1_1Header_ae37e5cbd056bb99cb583f5ec7e4285d6}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!Header@{Header}}
+\index{Header@{Header}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{Header()}{Header()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Diameter\+::\+A\+V\+P\+::\+Header\+::\+Header (\begin{DoxyParamCaption}\item[{const \hyperlink{classDiameter_1_1AVP_1_1Header}{Header} \&}]{copied }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em copied} & Copy. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_a4cf4fb50efbf6e3f6de2b50b528ecc3b}\label{classDiameter_1_1AVP_1_1Header_a4cf4fb50efbf6e3f6de2b50b528ecc3b}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!avp\+Code@{avp\+Code}}
+\index{avp\+Code@{avp\+Code}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{avp\+Code()}{avpCode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Diameter\+::\+A\+V\+P\+::\+Header\+::\+A\+V\+P\+Code\+Type Diameter\+::\+A\+V\+P\+::\+Header\+::avp\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for getting \hyperlink{classDiameter_1_1AVP}{A\+VP} code. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDiameter_1_1AVP}{A\+VP} code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_ad6b105892bcd3dcc952788299797bfa5}\label{classDiameter_1_1AVP_1_1Header_ad6b105892bcd3dcc952788299797bfa5}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!avp\+Code@{avp\+Code}}
+\index{avp\+Code@{avp\+Code}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{avp\+Code()}{avpCode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Diameter\+::\+A\+V\+P\+::\+Header\+::\+A\+V\+P\+Code\+Type \& Diameter\+::\+A\+V\+P\+::\+Header\+::avp\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method for getting \hyperlink{classDiameter_1_1AVP}{A\+VP} code. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDiameter_1_1AVP}{A\+VP} code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_a6bffec09d8dd172535828e2927a2a480}\label{classDiameter_1_1AVP_1_1Header_a6bffec09d8dd172535828e2927a2a480}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!calculate\+Size@{calculate\+Size}}
+\index{calculate\+Size@{calculate\+Size}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{calculate\+Size()}{calculateSize()}}
+{\footnotesize\ttfamily Diameter\+::\+A\+V\+P\+::\+Header\+::\+Length\+Type Diameter\+::\+A\+V\+P\+::\+Header\+::calculate\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for calculating header size based on internal state. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDiameter_1_1AVP_1_1Header}{Header} length. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_adb165b56a7160803480621b3789c972a}\label{classDiameter_1_1AVP_1_1Header_adb165b56a7160803480621b3789c972a}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!deploy@{deploy}}
+\index{deploy@{deploy}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{deploy()}{deploy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Byte\+Array Diameter\+::\+A\+V\+P\+::\+Header\+::deploy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for deploying \hyperlink{classDiameter_1_1AVP}{A\+VP} header. 
+
+\begin{DoxyReturn}{Returns}
+Byte array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_ac56e1a44d35cb41d834581834cf17c25}\label{classDiameter_1_1AVP_1_1Header_ac56e1a44d35cb41d834581834cf17c25}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!deploy@{deploy}}
+\index{deploy@{deploy}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{deploy()}{deploy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Diameter\+::\+A\+V\+P\+::\+Header\+::deploy (\begin{DoxyParamCaption}\item[{Byte\+Array \&}]{byte\+Array }\end{DoxyParamCaption}) const}
+
+
+
+Method for deploying \hyperlink{classDiameter_1_1AVP}{A\+VP} header to existing byte array. Byte array will be appended. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em byte\+Array} & Byte array. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_ad100d91021d1db37cc270eefad43ccae}\label{classDiameter_1_1AVP_1_1Header_ad100d91021d1db37cc270eefad43ccae}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!flags@{flags}}
+\index{flags@{flags}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{flags()}{flags()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags} Diameter\+::\+A\+V\+P\+::\+Header\+::flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for getting \hyperlink{classDiameter_1_1AVP}{A\+VP} flags. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDiameter_1_1AVP}{A\+VP} flags. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_acbebbb2ad082d7400ee9a0ebf105b55b}\label{classDiameter_1_1AVP_1_1Header_acbebbb2ad082d7400ee9a0ebf105b55b}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!flags@{flags}}
+\index{flags@{flags}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{flags()}{flags()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags} \& Diameter\+::\+A\+V\+P\+::\+Header\+::flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method for getting \hyperlink{classDiameter_1_1AVP}{A\+VP} flags. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDiameter_1_1AVP}{A\+VP} flags. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_a9c752aeb95b034a3172367d0da0be0c8}\label{classDiameter_1_1AVP_1_1Header_a9c752aeb95b034a3172367d0da0be0c8}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{is\+Valid()}{isValid()}}
+{\footnotesize\ttfamily bool Diameter\+::\+A\+V\+P\+::\+Header\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for checking \hyperlink{classDiameter_1_1AVP}{A\+VP} header validness. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDiameter_1_1AVP}{A\+VP} validness. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_a9a097c1c12f4e81cc47b980a32e2881c}\label{classDiameter_1_1AVP_1_1Header_a9a097c1c12f4e81cc47b980a32e2881c}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!length@{length}}
+\index{length@{length}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{length()}{length()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Diameter\+::\+A\+V\+P\+::\+Header\+::\+Length\+Type Diameter\+::\+A\+V\+P\+::\+Header\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for getting \hyperlink{classDiameter_1_1AVP}{A\+VP} length. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDiameter_1_1AVP}{A\+VP} length. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_ab2699d4d3cdc98d9649df77e7a546231}\label{classDiameter_1_1AVP_1_1Header_ab2699d4d3cdc98d9649df77e7a546231}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!length@{length}}
+\index{length@{length}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{length()}{length()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Diameter\+::\+A\+V\+P\+::\+Header\+::\+Length\+Type \& Diameter\+::\+A\+V\+P\+::\+Header\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method for getting \hyperlink{classDiameter_1_1AVP}{A\+VP} length. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDiameter_1_1AVP}{A\+VP} length. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_a3798fa2ecf6fb48e3d54af4fb874b12c}\label{classDiameter_1_1AVP_1_1Header_a3798fa2ecf6fb48e3d54af4fb874b12c}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!operator=@{operator=}}
+\index{operator=@{operator=}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Header}{Diameter\+::\+A\+V\+P\+::\+Header} \& Diameter\+::\+A\+V\+P\+::\+Header\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classDiameter_1_1AVP_1_1Header}{Header} \&\&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & Moved object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_a739d3c2f35b5e7bdb1072668e69ae1b5}\label{classDiameter_1_1AVP_1_1Header_a739d3c2f35b5e7bdb1072668e69ae1b5}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!operator=@{operator=}}
+\index{operator=@{operator=}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Header}{Header}\& Diameter\+::\+A\+V\+P\+::\+Header\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classDiameter_1_1AVP_1_1Header}{Header} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & Copied object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_a74ba1debad513ac3eaebf760228ee9c0}\label{classDiameter_1_1AVP_1_1Header_a74ba1debad513ac3eaebf760228ee9c0}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!set\+A\+V\+P\+Code@{set\+A\+V\+P\+Code}}
+\index{set\+A\+V\+P\+Code@{set\+A\+V\+P\+Code}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{set\+A\+V\+P\+Code()}{setAVPCode()}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Header}{Diameter\+::\+A\+V\+P\+::\+Header} \& Diameter\+::\+A\+V\+P\+::\+Header\+::set\+A\+V\+P\+Code (\begin{DoxyParamCaption}\item[{A\+V\+P\+Code\+Type}]{code }\end{DoxyParamCaption})}
+
+
+
+Method for setting \hyperlink{classDiameter_1_1AVP}{A\+VP} code. R\+F\+C-\/3588 defines field size as 32 bit (4 bytes). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & \hyperlink{classDiameter_1_1AVP}{A\+VP} code. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_a3d1f5e2e4f7779c6aead3ee8236f7e6d}\label{classDiameter_1_1AVP_1_1Header_a3d1f5e2e4f7779c6aead3ee8236f7e6d}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!set\+A\+V\+P\+Length@{set\+A\+V\+P\+Length}}
+\index{set\+A\+V\+P\+Length@{set\+A\+V\+P\+Length}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{set\+A\+V\+P\+Length()}{setAVPLength()}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Header}{Diameter\+::\+A\+V\+P\+::\+Header} \& Diameter\+::\+A\+V\+P\+::\+Header\+::set\+A\+V\+P\+Length (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Method for setting \hyperlink{classDiameter_1_1AVP}{A\+VP} length. (With header) R\+F\+C3588 defines this field as 24 bits (3 байта). Available values are \mbox{[}0, 16777215\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & \hyperlink{classDiameter_1_1AVP}{A\+VP} length. Available values \mbox{[}0, 16777215\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_aa95dc9f6cb0461c20ffbec994cfb4fcd}\label{classDiameter_1_1AVP_1_1Header_aa95dc9f6cb0461c20ffbec994cfb4fcd}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!set\+Flags@{set\+Flags}}
+\index{set\+Flags@{set\+Flags}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{set\+Flags()}{setFlags()}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Header}{Diameter\+::\+A\+V\+P\+::\+Header} \& Diameter\+::\+A\+V\+P\+::\+Header\+::set\+Flags (\begin{DoxyParamCaption}\item[{const \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Flags} \&}]{flags }\end{DoxyParamCaption})}
+
+
+
+Method for setting \hyperlink{classDiameter_1_1AVP}{A\+VP} flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & \hyperlink{classDiameter_1_1AVP}{A\+VP} flags constructor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_a08456b4ff0f04b907e24cf090e22ec49}\label{classDiameter_1_1AVP_1_1Header_a08456b4ff0f04b907e24cf090e22ec49}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!set\+Vendor\+ID@{set\+Vendor\+ID}}
+\index{set\+Vendor\+ID@{set\+Vendor\+ID}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{set\+Vendor\+I\+D()}{setVendorID()}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Header}{Diameter\+::\+A\+V\+P\+::\+Header} \& Diameter\+::\+A\+V\+P\+::\+Header\+::set\+Vendor\+ID (\begin{DoxyParamCaption}\item[{Vendor\+Id\+Type}]{id }\end{DoxyParamCaption})}
+
+
+
+Method for setting Vendor Id. If flag {\ttfamily V} is not defined, then if try to set vendor id, std\+::invalid\+\_\+argument exception will be thrown. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Vendor Id. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_ad4d7c49fbcbaed23affaa33a75b518f5}\label{classDiameter_1_1AVP_1_1Header_ad4d7c49fbcbaed23affaa33a75b518f5}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}!vendor\+Id@{vendor\+Id}}
+\index{vendor\+Id@{vendor\+Id}!Diameter\+::\+A\+V\+P\+::\+Header@{Diameter\+::\+A\+V\+P\+::\+Header}}
+\subsubsection{\texorpdfstring{vendor\+Id()}{vendorId()}}
+{\footnotesize\ttfamily Diameter\+::\+A\+V\+P\+::\+Header\+::\+Vendor\+Id\+Type Diameter\+::\+A\+V\+P\+::\+Header\+::vendor\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for getting Vendor Id. If there is no vendor id, std\+::invalid\+\_\+argument exception will be thrown. Check existence with flag {\ttfamily V}. 
+
+\begin{DoxyReturn}{Returns}
+Vendor Id value. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/A\+V\+P.\+hpp\item 
+src/A\+V\+P\+Header.\+cpp\end{DoxyCompactItemize}

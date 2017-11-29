@@ -1,0 +1,417 @@
+\hypertarget{classDiameter_1_1AVP_1_1Data}{}\section{Diameter\+:\+:A\+VP\+:\+:Data Class Reference}
+\label{classDiameter_1_1AVP_1_1Data}\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+
+
+Constructor class for building \hyperlink{classDiameter_1_1AVP}{A\+VP} data. There is no Float32 and Float64 types, because C++ standard does not defines {\ttfamily float} and {\ttfamily double} implementation.  
+
+
+
+
+{\ttfamily \#include $<$A\+V\+P.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_abde6c04fc27410e0731bcda256c480f1}\label{classDiameter_1_1AVP_1_1Data_abde6c04fc27410e0731bcda256c480f1}} 
+using {\bfseries A\+V\+P\+Container} = std\+::vector$<$ \hyperlink{classDiameter_1_1AVP}{A\+VP} $>$
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_a37f612363f90b54dafc6fff7f21104f0}\label{classDiameter_1_1AVP_1_1Data_a37f612363f90b54dafc6fff7f21104f0}} 
+\hyperlink{classDiameter_1_1AVP_1_1Data_a37f612363f90b54dafc6fff7f21104f0}{Data} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Data_a204b2752879567b7db58d0b1f567152d}{Data} (const Byte\+Array \&byte\+Array)
+\begin{DoxyCompactList}\small\item\em Parsing constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_ab0eb2092eb046830e80053caa2840f2e}\label{classDiameter_1_1AVP_1_1Data_ab0eb2092eb046830e80053caa2840f2e}} 
+\hyperlink{classDiameter_1_1AVP_1_1Data_ab0eb2092eb046830e80053caa2840f2e}{Data} (\hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \&\&moved) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Data_a156c0f23cc44db70a41d609795e76f4c}{Data} (const \hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \&copied)=default
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \& \hyperlink{classDiameter_1_1AVP_1_1Data_a12bbc6bbced56e8151e34e7b49963963}{set\+Octet\+String} (const Byte\+Array \&value)
+\begin{DoxyCompactList}\small\item\em Method for setting byte array as data. \end{DoxyCompactList}\item 
+Byte\+Array \hyperlink{classDiameter_1_1AVP_1_1Data_aa344738719504128278ccdecd2baea77}{to\+Octet\+String} () const
+\begin{DoxyCompactList}\small\item\em Method for translating data to octet string. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \& \hyperlink{classDiameter_1_1AVP_1_1Data_ae769d186f3fe50131f726fbc843259ea}{set\+Integer32} (int32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Method for setting signed 32 bit integer. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{classDiameter_1_1AVP_1_1Data_a6af0bac449276561f6fc49cccc4d422f}{to\+Integer32} () const
+\begin{DoxyCompactList}\small\item\em Method for getting signed 32 bit integer. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \& \hyperlink{classDiameter_1_1AVP_1_1Data_aa10615ef903cd9806b11fca0bf36a0cf}{set\+Integer64} (int64\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Method for setting signed 64 bit integer. \end{DoxyCompactList}\item 
+int64\+\_\+t \hyperlink{classDiameter_1_1AVP_1_1Data_afbff0ff7081269e95f52a47924f92abb}{to\+Integer64} () const
+\begin{DoxyCompactList}\small\item\em Method for getting signed 64 bit integer. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \& \hyperlink{classDiameter_1_1AVP_1_1Data_ab0596395222f790540d68b9fcacf868b}{set\+Unsigned32} (uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Method for setting unsigned 32 bit integer. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classDiameter_1_1AVP_1_1Data_aa4db9af44641f1dc691fdf4736d0aace}{to\+Unsigned32} () const
+\begin{DoxyCompactList}\small\item\em Method for getting unsigned 32 bit integer. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \& \hyperlink{classDiameter_1_1AVP_1_1Data_a6d04d160fd5093e2b68300d4dc5a6839}{set\+Unsigned64} (uint64\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Method for setting unsigned 64 bit integer. \end{DoxyCompactList}\item 
+uint64\+\_\+t \hyperlink{classDiameter_1_1AVP_1_1Data_a57371b621b2e27eb2988b232f5a84a43}{to\+Unsigned64} () const
+\begin{DoxyCompactList}\small\item\em Method for getting unsigned 64 bit integer. \end{DoxyCompactList}\item 
+A\+V\+P\+Container \hyperlink{classDiameter_1_1AVP_1_1Data_ab62da271ed4bab26b26e497cc33e5955}{to\+A\+V\+Ps} () const
+\begin{DoxyCompactList}\small\item\em Method for getting avps from data value. If it\textquotesingle{}s impossible std\+::invalid\+\_\+argument exceptionw will be thrown. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \& \hyperlink{classDiameter_1_1AVP_1_1Data_a7d9aba7586083a93c48dd872396cb0e1}{add\+A\+VP} (const \hyperlink{classDiameter_1_1AVP}{A\+VP} \&avp)
+\begin{DoxyCompactList}\small\item\em Method for appending \hyperlink{classDiameter_1_1AVP}{A\+VP} to data. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Input\+Iterator $>$ }\\\hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \& \hyperlink{classDiameter_1_1AVP_1_1Data_a36ab07b5614a88fad586d67c5c6155aa}{add\+A\+VP} (Input\+Iterator first, Input\+Iterator last)
+\begin{DoxyCompactList}\small\item\em Method for adding A\+V\+Ps from range. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{classDiameter_1_1AVP_1_1Data_a5ba282bdc28fe77ef680bba192a57d2c}{size} () const
+\begin{DoxyCompactList}\small\item\em Method for getting data size in bytes. \end{DoxyCompactList}\item 
+bool \hyperlink{classDiameter_1_1AVP_1_1Data_adf7dd6eb3736b2d0269f57774758480e}{is\+Valid} () const
+\begin{DoxyCompactList}\small\item\em Method for \hyperlink{classDiameter_1_1AVP}{A\+VP} data validating. \end{DoxyCompactList}\item 
+Byte\+Array \hyperlink{classDiameter_1_1AVP_1_1Data_a71951bfda9c3be98f5c7c0e6fa5382cf}{deploy} () const
+\begin{DoxyCompactList}\small\item\em Method for deploying \hyperlink{classDiameter_1_1AVP_1_1Data}{Data}. \end{DoxyCompactList}\item 
+void \hyperlink{classDiameter_1_1AVP_1_1Data_a3c6e4d52e46b76b84fd8b9041638cc7f}{deploy} (Byte\+Array \&byte\+Array) const
+\begin{DoxyCompactList}\small\item\em Method for deploying \hyperlink{classDiameter_1_1AVP_1_1Data}{Data}. \hyperlink{classDiameter_1_1AVP_1_1Data}{Data} will be appended to Byte\+Array. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \& \hyperlink{classDiameter_1_1AVP_1_1Data_ae22c091934eb984ae9f0a03117ac7bf5}{operator=} (\hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \&\&rhs) noexcept
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \& \hyperlink{classDiameter_1_1AVP_1_1Data_aae8acff35ff879145a549d25320df2ea}{operator=} (const \hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \&rhs)=default
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Constructor class for building \hyperlink{classDiameter_1_1AVP}{A\+VP} data. There is no Float32 and Float64 types, because C++ standard does not defines {\ttfamily float} and {\ttfamily double} implementation. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_a204b2752879567b7db58d0b1f567152d}\label{classDiameter_1_1AVP_1_1Data_a204b2752879567b7db58d0b1f567152d}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!Data@{Data}}
+\index{Data@{Data}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Diameter\+::\+A\+V\+P\+::\+Data\+::\+Data (\begin{DoxyParamCaption}\item[{const Byte\+Array \&}]{byte\+Array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Parsing constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & Byte array. \\
+\hline
+{\em size} & Byte array size. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_a156c0f23cc44db70a41d609795e76f4c}\label{classDiameter_1_1AVP_1_1Data_a156c0f23cc44db70a41d609795e76f4c}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!Data@{Data}}
+\index{Data@{Data}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Diameter\+::\+A\+V\+P\+::\+Data\+::\+Data (\begin{DoxyParamCaption}\item[{const \hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \&}]{copied }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em copied} & Copied. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_a7d9aba7586083a93c48dd872396cb0e1}\label{classDiameter_1_1AVP_1_1Data_a7d9aba7586083a93c48dd872396cb0e1}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!add\+A\+VP@{add\+A\+VP}}
+\index{add\+A\+VP@{add\+A\+VP}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{add\+A\+V\+P()}{addAVP()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Data}{Diameter\+::\+A\+V\+P\+::\+Data} \& Diameter\+::\+A\+V\+P\+::\+Data\+::add\+A\+VP (\begin{DoxyParamCaption}\item[{const \hyperlink{classDiameter_1_1AVP}{A\+VP} \&}]{avp }\end{DoxyParamCaption})}
+
+
+
+Method for appending \hyperlink{classDiameter_1_1AVP}{A\+VP} to data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em avp} & \hyperlink{classDiameter_1_1AVP}{A\+VP} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_a36ab07b5614a88fad586d67c5c6155aa}\label{classDiameter_1_1AVP_1_1Data_a36ab07b5614a88fad586d67c5c6155aa}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!add\+A\+VP@{add\+A\+VP}}
+\index{add\+A\+VP@{add\+A\+VP}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{add\+A\+V\+P()}{addAVP()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Input\+Iterator $>$ \\
+\hyperlink{classDiameter_1_1AVP_1_1Data}{Data}\& Diameter\+::\+A\+V\+P\+::\+Data\+::add\+A\+VP (\begin{DoxyParamCaption}\item[{Input\+Iterator}]{first,  }\item[{Input\+Iterator}]{last }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Method for adding A\+V\+Ps from range. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Input\+Iterator} & Input iterator type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em first} & First iterator. \\
+\hline
+{\em last} & Last iterator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_a71951bfda9c3be98f5c7c0e6fa5382cf}\label{classDiameter_1_1AVP_1_1Data_a71951bfda9c3be98f5c7c0e6fa5382cf}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!deploy@{deploy}}
+\index{deploy@{deploy}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{deploy()}{deploy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Byte\+Array Diameter\+::\+A\+V\+P\+::\+Data\+::deploy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for deploying \hyperlink{classDiameter_1_1AVP_1_1Data}{Data}. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDiameter_1_1AVP_1_1Data}{Data}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_a3c6e4d52e46b76b84fd8b9041638cc7f}\label{classDiameter_1_1AVP_1_1Data_a3c6e4d52e46b76b84fd8b9041638cc7f}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!deploy@{deploy}}
+\index{deploy@{deploy}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{deploy()}{deploy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Diameter\+::\+A\+V\+P\+::\+Data\+::deploy (\begin{DoxyParamCaption}\item[{Byte\+Array \&}]{byte\+Array }\end{DoxyParamCaption}) const}
+
+
+
+Method for deploying \hyperlink{classDiameter_1_1AVP_1_1Data}{Data}. \hyperlink{classDiameter_1_1AVP_1_1Data}{Data} will be appended to Byte\+Array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em byte\+Array} & Byte Array. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_adf7dd6eb3736b2d0269f57774758480e}\label{classDiameter_1_1AVP_1_1Data_adf7dd6eb3736b2d0269f57774758480e}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{is\+Valid()}{isValid()}}
+{\footnotesize\ttfamily bool Diameter\+::\+A\+V\+P\+::\+Data\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for \hyperlink{classDiameter_1_1AVP}{A\+VP} data validating. 
+
+\begin{DoxyReturn}{Returns}
+Is valid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_ae22c091934eb984ae9f0a03117ac7bf5}\label{classDiameter_1_1AVP_1_1Data_ae22c091934eb984ae9f0a03117ac7bf5}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!operator=@{operator=}}
+\index{operator=@{operator=}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Data}{Diameter\+::\+A\+V\+P\+::\+Data} \& Diameter\+::\+A\+V\+P\+::\+Data\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \&\&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & Moved object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_aae8acff35ff879145a549d25320df2ea}\label{classDiameter_1_1AVP_1_1Data_aae8acff35ff879145a549d25320df2ea}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!operator=@{operator=}}
+\index{operator=@{operator=}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Data}{Data}\& Diameter\+::\+A\+V\+P\+::\+Data\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & Copied object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_ae769d186f3fe50131f726fbc843259ea}\label{classDiameter_1_1AVP_1_1Data_ae769d186f3fe50131f726fbc843259ea}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!set\+Integer32@{set\+Integer32}}
+\index{set\+Integer32@{set\+Integer32}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{set\+Integer32()}{setInteger32()}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Data}{Diameter\+::\+A\+V\+P\+::\+Data} \& Diameter\+::\+A\+V\+P\+::\+Data\+::set\+Integer32 (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Method for setting signed 32 bit integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Constructor reference. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_aa10615ef903cd9806b11fca0bf36a0cf}\label{classDiameter_1_1AVP_1_1Data_aa10615ef903cd9806b11fca0bf36a0cf}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!set\+Integer64@{set\+Integer64}}
+\index{set\+Integer64@{set\+Integer64}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{set\+Integer64()}{setInteger64()}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Data}{Diameter\+::\+A\+V\+P\+::\+Data} \& Diameter\+::\+A\+V\+P\+::\+Data\+::set\+Integer64 (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Method for setting signed 64 bit integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_a12bbc6bbced56e8151e34e7b49963963}\label{classDiameter_1_1AVP_1_1Data_a12bbc6bbced56e8151e34e7b49963963}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!set\+Octet\+String@{set\+Octet\+String}}
+\index{set\+Octet\+String@{set\+Octet\+String}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{set\+Octet\+String()}{setOctetString()}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Data}{Diameter\+::\+A\+V\+P\+::\+Data} \& Diameter\+::\+A\+V\+P\+::\+Data\+::set\+Octet\+String (\begin{DoxyParamCaption}\item[{const Byte\+Array \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Method for setting byte array as data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \hyperlink{classDiameter_1_1AVP_1_1Data}{Data}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_ab0596395222f790540d68b9fcacf868b}\label{classDiameter_1_1AVP_1_1Data_ab0596395222f790540d68b9fcacf868b}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!set\+Unsigned32@{set\+Unsigned32}}
+\index{set\+Unsigned32@{set\+Unsigned32}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{set\+Unsigned32()}{setUnsigned32()}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Data}{Diameter\+::\+A\+V\+P\+::\+Data} \& Diameter\+::\+A\+V\+P\+::\+Data\+::set\+Unsigned32 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Method for setting unsigned 32 bit integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_a6d04d160fd5093e2b68300d4dc5a6839}\label{classDiameter_1_1AVP_1_1Data_a6d04d160fd5093e2b68300d4dc5a6839}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!set\+Unsigned64@{set\+Unsigned64}}
+\index{set\+Unsigned64@{set\+Unsigned64}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{set\+Unsigned64()}{setUnsigned64()}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Data}{Diameter\+::\+A\+V\+P\+::\+Data} \& Diameter\+::\+A\+V\+P\+::\+Data\+::set\+Unsigned64 (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Method for setting unsigned 64 bit integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_a5ba282bdc28fe77ef680bba192a57d2c}\label{classDiameter_1_1AVP_1_1Data_a5ba282bdc28fe77ef680bba192a57d2c}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!size@{size}}
+\index{size@{size}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily uint32\+\_\+t Diameter\+::\+A\+V\+P\+::\+Data\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for getting data size in bytes. 
+
+\begin{DoxyReturn}{Returns}
+Size in bytes. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_ab62da271ed4bab26b26e497cc33e5955}\label{classDiameter_1_1AVP_1_1Data_ab62da271ed4bab26b26e497cc33e5955}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!to\+A\+V\+Ps@{to\+A\+V\+Ps}}
+\index{to\+A\+V\+Ps@{to\+A\+V\+Ps}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{to\+A\+V\+Ps()}{toAVPs()}}
+{\footnotesize\ttfamily Diameter\+::\+A\+V\+P\+::\+Data\+::\+A\+V\+P\+Container Diameter\+::\+A\+V\+P\+::\+Data\+::to\+A\+V\+Ps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for getting avps from data value. If it\textquotesingle{}s impossible std\+::invalid\+\_\+argument exceptionw will be thrown. 
+
+\begin{DoxyReturn}{Returns}
+Container with A\+V\+Ps. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_a6af0bac449276561f6fc49cccc4d422f}\label{classDiameter_1_1AVP_1_1Data_a6af0bac449276561f6fc49cccc4d422f}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!to\+Integer32@{to\+Integer32}}
+\index{to\+Integer32@{to\+Integer32}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{to\+Integer32()}{toInteger32()}}
+{\footnotesize\ttfamily int32\+\_\+t Diameter\+::\+A\+V\+P\+::\+Data\+::to\+Integer32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for getting signed 32 bit integer. 
+
+\begin{DoxyReturn}{Returns}
+Value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_afbff0ff7081269e95f52a47924f92abb}\label{classDiameter_1_1AVP_1_1Data_afbff0ff7081269e95f52a47924f92abb}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!to\+Integer64@{to\+Integer64}}
+\index{to\+Integer64@{to\+Integer64}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{to\+Integer64()}{toInteger64()}}
+{\footnotesize\ttfamily int64\+\_\+t Diameter\+::\+A\+V\+P\+::\+Data\+::to\+Integer64 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for getting signed 64 bit integer. 
+
+\begin{DoxyReturn}{Returns}
+Value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_aa344738719504128278ccdecd2baea77}\label{classDiameter_1_1AVP_1_1Data_aa344738719504128278ccdecd2baea77}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!to\+Octet\+String@{to\+Octet\+String}}
+\index{to\+Octet\+String@{to\+Octet\+String}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{to\+Octet\+String()}{toOctetString()}}
+{\footnotesize\ttfamily Byte\+Array Diameter\+::\+A\+V\+P\+::\+Data\+::to\+Octet\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for translating data to octet string. 
+
+\begin{DoxyReturn}{Returns}
+Массив байт. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_aa4db9af44641f1dc691fdf4736d0aace}\label{classDiameter_1_1AVP_1_1Data_aa4db9af44641f1dc691fdf4736d0aace}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!to\+Unsigned32@{to\+Unsigned32}}
+\index{to\+Unsigned32@{to\+Unsigned32}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{to\+Unsigned32()}{toUnsigned32()}}
+{\footnotesize\ttfamily uint32\+\_\+t Diameter\+::\+A\+V\+P\+::\+Data\+::to\+Unsigned32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for getting unsigned 32 bit integer. 
+
+\begin{DoxyReturn}{Returns}
+Value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Data_a57371b621b2e27eb2988b232f5a84a43}\label{classDiameter_1_1AVP_1_1Data_a57371b621b2e27eb2988b232f5a84a43}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}!to\+Unsigned64@{to\+Unsigned64}}
+\index{to\+Unsigned64@{to\+Unsigned64}!Diameter\+::\+A\+V\+P\+::\+Data@{Diameter\+::\+A\+V\+P\+::\+Data}}
+\subsubsection{\texorpdfstring{to\+Unsigned64()}{toUnsigned64()}}
+{\footnotesize\ttfamily uint64\+\_\+t Diameter\+::\+A\+V\+P\+::\+Data\+::to\+Unsigned64 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for getting unsigned 64 bit integer. 
+
+\begin{DoxyReturn}{Returns}
+Value. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/A\+V\+P.\+hpp\item 
+src/A\+V\+P\+Data.\+cpp\end{DoxyCompactItemize}

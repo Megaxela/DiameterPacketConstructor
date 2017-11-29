@@ -1,0 +1,193 @@
+\hypertarget{classDiameter_1_1AVP_1_1Header_1_1Flags}{}\section{Diameter\+:\+:A\+VP\+:\+:Header\+:\+:Flags Class Reference}
+\label{classDiameter_1_1AVP_1_1Header_1_1Flags}\index{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags@{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags}}
+
+
+Constructor class for building A\+V\+Ps header flags.  
+
+
+
+
+{\ttfamily \#include $<$A\+V\+P.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_1_1Flags_af24fa00d6135e01a5b58c9ae84245262}\label{classDiameter_1_1AVP_1_1Header_1_1Flags_af24fa00d6135e01a5b58c9ae84245262}} 
+enum \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags_af24fa00d6135e01a5b58c9ae84245262}{Bits} \{ {\bfseries Vendor\+Specific} = 0b10000000, 
+{\bfseries Mandatory} = 0b01000000, 
+{\bfseries Protected} = 0b00100000
+ \}\begin{DoxyCompactList}\small\item\em Enum type . \end{DoxyCompactList}
+\item 
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_1_1Flags_ab0ae38018e81989b8614be1a78f5605b}\label{classDiameter_1_1AVP_1_1Header_1_1Flags_ab0ae38018e81989b8614be1a78f5605b}} 
+using {\bfseries Type} = uint8\+\_\+t
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_1_1Flags_a727e454894ee69b06da8cf847e8c4339}\label{classDiameter_1_1AVP_1_1Header_1_1Flags_a727e454894ee69b06da8cf847e8c4339}} 
+\hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags_a727e454894ee69b06da8cf847e8c4339}{Flags} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags_aafe29286cfb1709d9bc5b23106e62d70}{Flags} (Type array)
+\begin{DoxyCompactList}\small\item\em Parsing constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_1_1Flags_a111c335add6a1914d32b934c3a9a030f}\label{classDiameter_1_1AVP_1_1Header_1_1Flags_a111c335add6a1914d32b934c3a9a030f}} 
+\hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags_a111c335add6a1914d32b934c3a9a030f}{Flags} (\hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Flags} \&\&rhs) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags_a27e14a76ae84079c9d51b44fc6883628}{Flags} (const \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Flags} \&rhs)=default
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Flags} \& \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags_a4ba216d20eac1f0cab1573b6b354d33c}{set\+Flag} (\hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags_af24fa00d6135e01a5b58c9ae84245262}{Bits} bit, bool value)
+\begin{DoxyCompactList}\small\item\em Method for setting bit value. \end{DoxyCompactList}\item 
+bool \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags_a8828e3f2e9d6242d8577178f6a910efd}{is\+Set} (\hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags_af24fa00d6135e01a5b58c9ae84245262}{Bits} bit) const
+\begin{DoxyCompactList}\small\item\em Method for getting bit value. \end{DoxyCompactList}\item 
+Type \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags_aad359a4a25b2998c813c0923e67efeb8}{deploy} () const
+\begin{DoxyCompactList}\small\item\em Method for getting flags serialized. \end{DoxyCompactList}\item 
+bool \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags_a6ab05074bd270c9593f524151443c879}{is\+Valid} () const
+\begin{DoxyCompactList}\small\item\em Method for checking are flags valid. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Flags} \& \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags_aef292134b9d9f7c46a382ffdf95327ba}{operator=} (\hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Flags} \&\&rhs) noexcept
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Flags} \& \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags_a8a630e537a7e2135c032a2f94fcb59ea}{operator=} (const \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Flags} \&rhs)=default
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Constructor class for building A\+V\+Ps header flags. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_1_1Flags_aafe29286cfb1709d9bc5b23106e62d70}\label{classDiameter_1_1AVP_1_1Header_1_1Flags_aafe29286cfb1709d9bc5b23106e62d70}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags@{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags}!Flags@{Flags}}
+\index{Flags@{Flags}!Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags@{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags}}
+\subsubsection{\texorpdfstring{Flags()}{Flags()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags\+::\+Flags (\begin{DoxyParamCaption}\item[{Type}]{array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Parsing constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Flags} value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_1_1Flags_a27e14a76ae84079c9d51b44fc6883628}\label{classDiameter_1_1AVP_1_1Header_1_1Flags_a27e14a76ae84079c9d51b44fc6883628}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags@{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags}!Flags@{Flags}}
+\index{Flags@{Flags}!Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags@{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags}}
+\subsubsection{\texorpdfstring{Flags()}{Flags()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags\+::\+Flags (\begin{DoxyParamCaption}\item[{const \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Flags} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_1_1Flags_aad359a4a25b2998c813c0923e67efeb8}\label{classDiameter_1_1AVP_1_1Header_1_1Flags_aad359a4a25b2998c813c0923e67efeb8}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags@{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags}!deploy@{deploy}}
+\index{deploy@{deploy}!Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags@{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags}}
+\subsubsection{\texorpdfstring{deploy()}{deploy()}}
+{\footnotesize\ttfamily Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags\+::\+Type Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags\+::deploy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for getting flags serialized. 
+
+\begin{DoxyReturn}{Returns}
+Serialized. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_1_1Flags_a8828e3f2e9d6242d8577178f6a910efd}\label{classDiameter_1_1AVP_1_1Header_1_1Flags_a8828e3f2e9d6242d8577178f6a910efd}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags@{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags}!is\+Set@{is\+Set}}
+\index{is\+Set@{is\+Set}!Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags@{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags}}
+\subsubsection{\texorpdfstring{is\+Set()}{isSet()}}
+{\footnotesize\ttfamily bool Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags\+::is\+Set (\begin{DoxyParamCaption}\item[{\hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags_af24fa00d6135e01a5b58c9ae84245262}{Bits}}]{bit }\end{DoxyParamCaption}) const}
+
+
+
+Method for getting bit value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit} & Bit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_1_1Flags_a6ab05074bd270c9593f524151443c879}\label{classDiameter_1_1AVP_1_1Header_1_1Flags_a6ab05074bd270c9593f524151443c879}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags@{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags@{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags}}
+\subsubsection{\texorpdfstring{is\+Valid()}{isValid()}}
+{\footnotesize\ttfamily bool Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for checking are flags valid. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Flags} validness. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_1_1Flags_aef292134b9d9f7c46a382ffdf95327ba}\label{classDiameter_1_1AVP_1_1Header_1_1Flags_aef292134b9d9f7c46a382ffdf95327ba}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags@{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags}!operator=@{operator=}}
+\index{operator=@{operator=}!Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags@{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags} \& Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Flags} \&\&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & Moved object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_1_1Flags_a8a630e537a7e2135c032a2f94fcb59ea}\label{classDiameter_1_1AVP_1_1Header_1_1Flags_a8a630e537a7e2135c032a2f94fcb59ea}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags@{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags}!operator=@{operator=}}
+\index{operator=@{operator=}!Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags@{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Flags}\& Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Flags} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & Copied obejct. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_1_1Header_1_1Flags_a4ba216d20eac1f0cab1573b6b354d33c}\label{classDiameter_1_1AVP_1_1Header_1_1Flags_a4ba216d20eac1f0cab1573b6b354d33c}} 
+\index{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags@{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags}!set\+Flag@{set\+Flag}}
+\index{set\+Flag@{set\+Flag}!Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags@{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags}}
+\subsubsection{\texorpdfstring{set\+Flag()}{setFlag()}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags} \& Diameter\+::\+A\+V\+P\+::\+Header\+::\+Flags\+::set\+Flag (\begin{DoxyParamCaption}\item[{\hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags_af24fa00d6135e01a5b58c9ae84245262}{Bits}}]{bit,  }\item[{bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Method for setting bit value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit} & Bit. \\
+\hline
+{\em value} & Value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/A\+V\+P.\+hpp\item 
+src/A\+V\+P\+Header\+Flags.\+cpp\end{DoxyCompactItemize}

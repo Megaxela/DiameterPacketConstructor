@@ -1,0 +1,293 @@
+\hypertarget{classDiameter_1_1AVP}{}\section{Diameter\+:\+:A\+VP Class Reference}
+\label{classDiameter_1_1AVP}\index{Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}}
+
+
+Constructor class for building Diameter \hyperlink{classDiameter_1_1AVP}{A\+VP}.  
+
+
+
+
+{\ttfamily \#include $<$A\+V\+P.\+hpp$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classDiameter_1_1AVP_1_1Data}{Data}
+\begin{DoxyCompactList}\small\item\em Constructor class for building \hyperlink{classDiameter_1_1AVP}{A\+VP} data. There is no Float32 and Float64 types, because C++ standard does not defines {\ttfamily float} and {\ttfamily double} implementation. \end{DoxyCompactList}\item 
+class \hyperlink{classDiameter_1_1AVP_1_1Header}{Header}
+\begin{DoxyCompactList}\small\item\em Constructor class for building Diameter A\+V\+Ps header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDiameter_1_1AVP_a840ad7cf0c0b0b9f8d73f2ae3f65b436}\label{classDiameter_1_1AVP_a840ad7cf0c0b0b9f8d73f2ae3f65b436}} 
+\hyperlink{classDiameter_1_1AVP_a840ad7cf0c0b0b9f8d73f2ae3f65b436}{A\+VP} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_a8ff7f26ccb7c31a2342d9e1895cb5f36}{A\+VP} (const Byte\+Array \&array)
+\begin{DoxyCompactList}\small\item\em Parsing constructor. If can\textquotesingle{}t parse -\/ throw std\+::invalid\+\_\+argument exception. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDiameter_1_1AVP_a24d6aa1295ec21d4e44f41be778d7a69}\label{classDiameter_1_1AVP_a24d6aa1295ec21d4e44f41be778d7a69}} 
+\hyperlink{classDiameter_1_1AVP_a24d6aa1295ec21d4e44f41be778d7a69}{A\+VP} (\hyperlink{classDiameter_1_1AVP}{A\+VP} \&\&moved) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_a7af17a8ef8718185e3aef42031f47e90}{A\+VP} (const \hyperlink{classDiameter_1_1AVP}{A\+VP} \&copied)=default
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP}{A\+VP} \& \hyperlink{classDiameter_1_1AVP_a1c275a3973c1d871e0653a1ab5c54499}{set\+Header} (const \hyperlink{classDiameter_1_1AVP_1_1Header}{Header} \&\hyperlink{classDiameter_1_1AVP_aa968a1e25c2b83df6ea774d67534320b}{header})
+\begin{DoxyCompactList}\small\item\em Method for setting \hyperlink{classDiameter_1_1AVP}{A\+VP}\textquotesingle{}s header. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Header}{Header} \hyperlink{classDiameter_1_1AVP_aa968a1e25c2b83df6ea774d67534320b}{header} () const
+\begin{DoxyCompactList}\small\item\em Method for getting \hyperlink{classDiameter_1_1AVP}{A\+VP}\textquotesingle{}s header. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Header}{Header} \& \hyperlink{classDiameter_1_1AVP_a9636f4defd3f7f65b807940658eda3b4}{header} ()
+\begin{DoxyCompactList}\small\item\em Method for getting \hyperlink{classDiameter_1_1AVP}{A\+VP}\textquotesingle{}s header. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP}{A\+VP} \& \hyperlink{classDiameter_1_1AVP_a9a16f50e09fa18523f6cc72e372949c8}{set\+Data} (const \hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \&\hyperlink{classDiameter_1_1AVP_aac6b58b95eef96ad4e3320d52a1b4093}{data})
+\begin{DoxyCompactList}\small\item\em Method for setting A\+V\+Ps data. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \hyperlink{classDiameter_1_1AVP_aac6b58b95eef96ad4e3320d52a1b4093}{data} () const
+\begin{DoxyCompactList}\small\item\em Method for getting A\+V\+Ps data. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \& \hyperlink{classDiameter_1_1AVP_a49f5fad4dbdf9ffe49c16d3d975df3c5}{data} ()
+\begin{DoxyCompactList}\small\item\em Method for getting A\+V\+Ps data. \end{DoxyCompactList}\item 
+bool \hyperlink{classDiameter_1_1AVP_a62d6c475e55729eb6fb15e442bc9bd65}{is\+Valid} () const
+\begin{DoxyCompactList}\small\item\em Method for checking \hyperlink{classDiameter_1_1AVP}{A\+VP}\textquotesingle{}s valid. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP}{A\+VP} \& \hyperlink{classDiameter_1_1AVP_a8b3cb410b287be025497c50f0a2f95d6}{operator=} (\hyperlink{classDiameter_1_1AVP}{A\+VP} \&\&moved) noexcept
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP}{A\+VP} \& \hyperlink{classDiameter_1_1AVP_adfe27eb6cac4704d495f3f21830abb4e}{operator=} (const \hyperlink{classDiameter_1_1AVP}{A\+VP} \&copied)=default
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\item 
+Diameter\+::\+A\+V\+P\+::\+Header\+::\+Length\+Type \hyperlink{classDiameter_1_1AVP_a755fe56553f0a9649c60fab98672a384}{calculate\+Length} (bool include\+Padding) const
+\begin{DoxyCompactList}\small\item\em Method for calculating actual avp length. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1AVP}{A\+VP} \& \hyperlink{classDiameter_1_1AVP_abb3ae19edc433ec2832e4cf2d72c425d}{update\+Length} ()
+\begin{DoxyCompactList}\small\item\em Method for updating length value. \end{DoxyCompactList}\item 
+Byte\+Array \hyperlink{classDiameter_1_1AVP_acb802bb9d8980848852b226c26bf4cb1}{deploy} () const
+\begin{DoxyCompactList}\small\item\em Method for serializing \hyperlink{classDiameter_1_1AVP}{A\+VP} to byte array. \end{DoxyCompactList}\item 
+void \hyperlink{classDiameter_1_1AVP_a9ac8102ba4fdc09a1df4904b4517c3d3}{deploy} (Byte\+Array \&byte\+Array) const
+\begin{DoxyCompactList}\small\item\em Method for serializing \hyperlink{classDiameter_1_1AVP}{A\+VP} to byte array. \hyperlink{classDiameter_1_1AVP}{A\+VP} will be appended. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Constructor class for building Diameter \hyperlink{classDiameter_1_1AVP}{A\+VP}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDiameter_1_1AVP_a8ff7f26ccb7c31a2342d9e1895cb5f36}\label{classDiameter_1_1AVP_a8ff7f26ccb7c31a2342d9e1895cb5f36}} 
+\index{Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}!A\+VP@{A\+VP}}
+\index{A\+VP@{A\+VP}!Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}}
+\subsubsection{\texorpdfstring{A\+V\+P()}{AVP()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Diameter\+::\+A\+V\+P\+::\+A\+VP (\begin{DoxyParamCaption}\item[{const Byte\+Array \&}]{array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Parsing constructor. If can\textquotesingle{}t parse -\/ throw std\+::invalid\+\_\+argument exception. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & Byte array. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDiameter_1_1AVP_a7af17a8ef8718185e3aef42031f47e90}\label{classDiameter_1_1AVP_a7af17a8ef8718185e3aef42031f47e90}} 
+\index{Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}!A\+VP@{A\+VP}}
+\index{A\+VP@{A\+VP}!Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}}
+\subsubsection{\texorpdfstring{A\+V\+P()}{AVP()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Diameter\+::\+A\+V\+P\+::\+A\+VP (\begin{DoxyParamCaption}\item[{const \hyperlink{classDiameter_1_1AVP}{A\+VP} \&}]{copied }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em copied} & Copied. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDiameter_1_1AVP_a755fe56553f0a9649c60fab98672a384}\label{classDiameter_1_1AVP_a755fe56553f0a9649c60fab98672a384}} 
+\index{Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}!calculate\+Length@{calculate\+Length}}
+\index{calculate\+Length@{calculate\+Length}!Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}}
+\subsubsection{\texorpdfstring{calculate\+Length()}{calculateLength()}}
+{\footnotesize\ttfamily Diameter\+::\+A\+V\+P\+::\+Header\+::\+Length\+Type Diameter\+::\+A\+V\+P\+::calculate\+Length (\begin{DoxyParamCaption}\item[{bool}]{include\+Padding }\end{DoxyParamCaption}) const}
+
+
+
+Method for calculating actual avp length. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDiameter_1_1AVP}{A\+VP} length. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_aac6b58b95eef96ad4e3320d52a1b4093}\label{classDiameter_1_1AVP_aac6b58b95eef96ad4e3320d52a1b4093}} 
+\index{Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}!data@{data}}
+\index{data@{data}!Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}}
+\subsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Data}{Diameter\+::\+A\+V\+P\+::\+Data} Diameter\+::\+A\+V\+P\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for getting A\+V\+Ps data. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDiameter_1_1AVP_1_1Data}{Data}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_a49f5fad4dbdf9ffe49c16d3d975df3c5}\label{classDiameter_1_1AVP_a49f5fad4dbdf9ffe49c16d3d975df3c5}} 
+\index{Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}!data@{data}}
+\index{data@{data}!Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}}
+\subsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Data}{Diameter\+::\+A\+V\+P\+::\+Data} \& Diameter\+::\+A\+V\+P\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method for getting A\+V\+Ps data. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDiameter_1_1AVP_1_1Data}{Data}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_acb802bb9d8980848852b226c26bf4cb1}\label{classDiameter_1_1AVP_acb802bb9d8980848852b226c26bf4cb1}} 
+\index{Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}!deploy@{deploy}}
+\index{deploy@{deploy}!Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}}
+\subsubsection{\texorpdfstring{deploy()}{deploy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Byte\+Array Diameter\+::\+A\+V\+P\+::deploy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for serializing \hyperlink{classDiameter_1_1AVP}{A\+VP} to byte array. 
+
+\begin{DoxyReturn}{Returns}
+Byte array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_a9ac8102ba4fdc09a1df4904b4517c3d3}\label{classDiameter_1_1AVP_a9ac8102ba4fdc09a1df4904b4517c3d3}} 
+\index{Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}!deploy@{deploy}}
+\index{deploy@{deploy}!Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}}
+\subsubsection{\texorpdfstring{deploy()}{deploy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Diameter\+::\+A\+V\+P\+::deploy (\begin{DoxyParamCaption}\item[{Byte\+Array \&}]{byte\+Array }\end{DoxyParamCaption}) const}
+
+
+
+Method for serializing \hyperlink{classDiameter_1_1AVP}{A\+VP} to byte array. \hyperlink{classDiameter_1_1AVP}{A\+VP} will be appended. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em byte\+Array} & Byte array. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDiameter_1_1AVP_aa968a1e25c2b83df6ea774d67534320b}\label{classDiameter_1_1AVP_aa968a1e25c2b83df6ea774d67534320b}} 
+\index{Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}!header@{header}}
+\index{header@{header}!Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}}
+\subsubsection{\texorpdfstring{header()}{header()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Header}{Diameter\+::\+A\+V\+P\+::\+Header} Diameter\+::\+A\+V\+P\+::header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for getting \hyperlink{classDiameter_1_1AVP}{A\+VP}\textquotesingle{}s header. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDiameter_1_1AVP}{A\+VP}\textquotesingle{}s header. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_a9636f4defd3f7f65b807940658eda3b4}\label{classDiameter_1_1AVP_a9636f4defd3f7f65b807940658eda3b4}} 
+\index{Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}!header@{header}}
+\index{header@{header}!Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}}
+\subsubsection{\texorpdfstring{header()}{header()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP_1_1Header}{Diameter\+::\+A\+V\+P\+::\+Header} \& Diameter\+::\+A\+V\+P\+::header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method for getting \hyperlink{classDiameter_1_1AVP}{A\+VP}\textquotesingle{}s header. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDiameter_1_1AVP}{A\+VP}\textquotesingle{}s header. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_a62d6c475e55729eb6fb15e442bc9bd65}\label{classDiameter_1_1AVP_a62d6c475e55729eb6fb15e442bc9bd65}} 
+\index{Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}}
+\subsubsection{\texorpdfstring{is\+Valid()}{isValid()}}
+{\footnotesize\ttfamily bool Diameter\+::\+A\+V\+P\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method for checking \hyperlink{classDiameter_1_1AVP}{A\+VP}\textquotesingle{}s valid. 
+
+\begin{DoxyReturn}{Returns}
+Is \hyperlink{classDiameter_1_1AVP}{A\+VP} valid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_a8b3cb410b287be025497c50f0a2f95d6}\label{classDiameter_1_1AVP_a8b3cb410b287be025497c50f0a2f95d6}} 
+\index{Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}!operator=@{operator=}}
+\index{operator=@{operator=}!Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP}{Diameter\+::\+A\+VP} \& Diameter\+::\+A\+V\+P\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classDiameter_1_1AVP}{Diameter\+::\+A\+VP} \&\&}]{moved }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em moved} & Moved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_adfe27eb6cac4704d495f3f21830abb4e}\label{classDiameter_1_1AVP_adfe27eb6cac4704d495f3f21830abb4e}} 
+\index{Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}!operator=@{operator=}}
+\index{operator=@{operator=}!Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP}{A\+VP}\& Diameter\+::\+A\+V\+P\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classDiameter_1_1AVP}{A\+VP} \&}]{copied }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Copy operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em copied} & Copied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_a9a16f50e09fa18523f6cc72e372949c8}\label{classDiameter_1_1AVP_a9a16f50e09fa18523f6cc72e372949c8}} 
+\index{Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}}
+\subsubsection{\texorpdfstring{set\+Data()}{setData()}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP}{Diameter\+::\+A\+VP} \& Diameter\+::\+A\+V\+P\+::set\+Data (\begin{DoxyParamCaption}\item[{const \hyperlink{classDiameter_1_1AVP_1_1Data}{Data} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Method for setting A\+V\+Ps data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \hyperlink{classDiameter_1_1AVP_1_1Data}{Data}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_a1c275a3973c1d871e0653a1ab5c54499}\label{classDiameter_1_1AVP_a1c275a3973c1d871e0653a1ab5c54499}} 
+\index{Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}!set\+Header@{set\+Header}}
+\index{set\+Header@{set\+Header}!Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}}
+\subsubsection{\texorpdfstring{set\+Header()}{setHeader()}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP}{Diameter\+::\+A\+VP} \& Diameter\+::\+A\+V\+P\+::set\+Header (\begin{DoxyParamCaption}\item[{const \hyperlink{classDiameter_1_1AVP_1_1Header}{Header} \&}]{header }\end{DoxyParamCaption})}
+
+
+
+Method for setting \hyperlink{classDiameter_1_1AVP}{A\+VP}\textquotesingle{}s header. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em header} & \hyperlink{classDiameter_1_1AVP_1_1Header}{Header}.. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1AVP_abb3ae19edc433ec2832e4cf2d72c425d}\label{classDiameter_1_1AVP_abb3ae19edc433ec2832e4cf2d72c425d}} 
+\index{Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}!update\+Length@{update\+Length}}
+\index{update\+Length@{update\+Length}!Diameter\+::\+A\+VP@{Diameter\+::\+A\+VP}}
+\subsubsection{\texorpdfstring{update\+Length()}{updateLength()}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1AVP}{Diameter\+::\+A\+VP} \& Diameter\+::\+A\+V\+P\+::update\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method for updating length value. 
+
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/A\+V\+P.\+hpp\item 
+src/A\+V\+P.\+cpp\end{DoxyCompactItemize}

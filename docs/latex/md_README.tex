@@ -1,0 +1,115 @@
+It\textquotesingle{}s pure C++11 library for constructing and parsing binary Diameter packets. This library uses \href{https://github.com/Megaxela/ByteArray}{\tt Byte\+Array} submodule.
+
+\subsection*{Build}
+
+0. Clone repo\+: {\ttfamily git clone \href{https://github.com/Megaxela/DiameterPacketConstructor}{\tt https\+://github.\+com/\+Megaxela/\+Diameter\+Packet\+Constructor}} 0. Go into repo\+: {\ttfamily cd Diameter\+Packet\+Constructor} 0. Init and update submodule\+: {\ttfamily git submodule init \&\& git submodule update} 0. Create build folder\+: {\ttfamily mkdir build} 0. Go into build folder\+: {\ttfamily cd build} 0. Generate build file for your compiler\+: {\ttfamily cmake ..} (or {\ttfamily cmake -\/\+D\+D\+I\+A\+M\+E\+T\+E\+R\+\_\+\+B\+U\+I\+L\+D\+\_\+\+T\+E\+S\+TS ..} if you want to build tests) 0. Build library\+: {\ttfamily cmake -\/-\/build .}
+
+\subsection*{Example}
+
+{\bfseries Constructing sample D\+PR packet} 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} packet = \hyperlink{classDiameter_1_1Packet}{Diameter::Packet}()
+        .\hyperlink{classDiameter_1_1Packet_ac37c0f3736cc87e553ecb7b60e6962b2}{setHeader}(
+            \hyperlink{classDiameter_1_1Packet_1_1Header}{Diameter::Packet::Header}()
+                \textcolor{comment}{// It's 1 by default. But for explicity i redefined it. }
+                .setVersion(1)
+                \textcolor{comment}{// Setting that it's request }
+                .setCommandFlags(
+                    \hyperlink{classDiameter_1_1Packet_1_1Header_1_1Flags}{Diameter::Packet::Header::Flags}()
+                        .setFlag(Diameter::Packet::Header::Flags::Bits::Request, \textcolor{keyword}{true})
+                )
+                .setCommandCode(282)
+                .setApplicationId(0)
+                .setHBHIdentifier(0x7ddf9367)
+                .setETEIdentifier(0xc15ecb12)
+        )
+        .\hyperlink{classDiameter_1_1Packet_a36d19bb1e2ff1517dea5927bd77cc7b9}{addAVP}( \textcolor{comment}{// Origin-Host AVP}
+            \hyperlink{classDiameter_1_1AVP}{Diameter::AVP}()
+                .setHeader(
+                    \hyperlink{classDiameter_1_1AVP_1_1Header}{Diameter::AVP::Header}()
+                        .setAVPCode(264)
+                        .setFlags(
+                            \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Diameter::AVP::Header::Flags}()
+                                .setFlag(Diameter::AVP::Header::Flags::Bits::Mandatory, \textcolor{keyword}{true})
+                        )
+                )
+                .setData(
+                    \hyperlink{classDiameter_1_1AVP_1_1Data}{Diameter::AVP::Data}()
+                        .setOctetString(
+                            ByteArray::fromASCII(\textcolor{stringliteral}{"originHostname"})
+                        )
+                )
+                \textcolor{comment}{// Updating AVP length field, according to header and data value.}
+                .updateLength()
+        )
+        .\hyperlink{classDiameter_1_1Packet_a36d19bb1e2ff1517dea5927bd77cc7b9}{addAVP}( \textcolor{comment}{// Disconnection-Cause}
+            \hyperlink{classDiameter_1_1AVP}{Diameter::AVP}()
+                .setHeader(
+                    \hyperlink{classDiameter_1_1AVP_1_1Header}{Diameter::AVP::Header}()
+                        .setAVPCode(273)
+                        .setFlags(
+                            \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Diameter::AVP::Header::Flags}()
+                                .setFlag(Diameter::AVP::Header::Flags::Bits::Mandatory, \textcolor{keyword}{true})
+                        )
+                )
+                .setData(
+                    \hyperlink{classDiameter_1_1AVP_1_1Data}{Diameter::AVP::Data}()
+                        .setUnsigned32(0) \textcolor{comment}{// REBOOT}
+                )
+                \textcolor{comment}{// Updating AVP length field, according to header and data value.}
+                .updateLength()
+        )
+        .\hyperlink{classDiameter_1_1Packet_a36d19bb1e2ff1517dea5927bd77cc7b9}{addAVP}( \textcolor{comment}{// Origin-Realm}
+            \hyperlink{classDiameter_1_1AVP}{Diameter::AVP}()
+                .setHeader(
+                    \hyperlink{classDiameter_1_1AVP_1_1Header}{Diameter::AVP::Header}()
+                        .setAVPCode(296)
+                        .setFlags(
+                            \hyperlink{classDiameter_1_1AVP_1_1Header_1_1Flags}{Diameter::AVP::Header::Flags}()
+                                .setFlag(Diameter::AVP::Header::Flags::Bits::Mandatory, \textcolor{keyword}{true})
+                        )
+                )
+                .setData(
+                    \hyperlink{classDiameter_1_1AVP_1_1Data}{Diameter::AVP::Data}()
+                        .setOctetString(
+                            ByteArray::fromASCII(\textcolor{stringliteral}{"originRealm"})
+                        )
+                )
+                \textcolor{comment}{// Updating AVP length field, according to header and data value.}
+                .updateLength()
+        )
+        \textcolor{comment}{// Updating Message length field, accordign to added AVPs}
+        .\hyperlink{classDiameter_1_1Packet_a822041d59387ef2a8c0f48c2c4bc1054}{updateLength}()
+        \textcolor{comment}{// Serializing Packet to ByteArray.}
+        .\hyperlink{classDiameter_1_1Packet_a6120f6d21c5d2f4c4ed4a8602953923c}{deploy}();
+\end{DoxyCode}
+
+
+{\bfseries Parsing binary packet} 
+\begin{DoxyCode}
+ByteArray binaryPacket; \textcolor{comment}{// Some binary}
+
+\hyperlink{classDiameter_1_1Packet}{Diameter::Packet} packet;
+
+\textcolor{keywordflow}{try}
+\{
+    packet = \hyperlink{classDiameter_1_1Packet}{Diameter::Packet}(binaryPacket);
+\}
+\textcolor{keywordflow}{catch} (std::invalid\_argument& e)
+\{
+    std::cerr << \textcolor{stringliteral}{"Parsing error: "} << e.what() << std::endl;
+\}
+\end{DoxyCode}
+
+
+\subsection*{L\+I\+C\+E\+N\+SE}
+
+
+
+Library is licensed under the \href{https://opensource.org/licenses/MIT}{\tt M\+IT License}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+T\+HE S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+TY OF A\+NY K\+I\+ND, E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED, I\+N\+C\+L\+U\+D\+I\+NG B\+UT N\+OT L\+I\+M\+I\+T\+ED TO T\+HE W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY, F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+ND N\+O\+N\+I\+N\+F\+R\+I\+N\+G\+E\+M\+E\+NT. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE A\+U\+T\+H\+O\+RS OR C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY C\+L\+A\+IM, D\+A\+M\+A\+G\+ES OR O\+T\+H\+ER L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN AN A\+C\+T\+I\+ON OF C\+O\+N\+T\+R\+A\+CT, T\+O\+RT OR O\+T\+H\+E\+R\+W\+I\+SE, A\+R\+I\+S\+I\+NG F\+R\+OM, O\+UT OF OR IN C\+O\+N\+N\+E\+C\+T\+I\+ON W\+I\+TH T\+HE S\+O\+F\+T\+W\+A\+RE OR T\+HE U\+SE OR O\+T\+H\+ER D\+E\+A\+L\+I\+N\+GS IN T\+HE S\+O\+F\+T\+W\+A\+RE. 
