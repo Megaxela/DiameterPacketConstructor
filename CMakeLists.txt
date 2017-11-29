@@ -5,14 +5,12 @@ set(CMAKE_CXX_STANDARD 11)
 
 option(DIAMETER_BUILD_TESTS "Build tests for packet constructor" OFF)
 
-include_directories(include)
 
-if (EXISTS ${CMAKE_SOURCE_DIR}/libraries/ByteArray/CMakeLists.txt)
-    add_subdirectory(libraries/ByteArray)
-    include_directories(libraries/ByteArray/include)
-else()
-    message("ByteArray submodule was not presented. Parent project has to present one.")
-endif()
+add_subdirectory(libraries/ByteArray)
+include_directories(
+        include
+        libraries/ByteArray/include
+)
 
 if (${DIAMETER_BUILD_TESTS})
     add_subdirectory(tests)
