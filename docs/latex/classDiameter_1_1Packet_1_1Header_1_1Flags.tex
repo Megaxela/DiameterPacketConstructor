@@ -43,7 +43,9 @@ bool \hyperlink{classDiameter_1_1Packet_1_1Header_1_1Flags_ae577fd786c656522b958
 Type \hyperlink{classDiameter_1_1Packet_1_1Header_1_1Flags_a6bb796dff7f3e8f128262fb2d3a549bb}{deploy} () const
 \begin{DoxyCompactList}\small\item\em Method for getting flags serialized. \end{DoxyCompactList}\item 
 \hyperlink{classDiameter_1_1Packet_1_1Header_1_1Flags}{Flags} \& \hyperlink{classDiameter_1_1Packet_1_1Header_1_1Flags_afd99abaebff289fdc859696929fea0da}{operator=} (\hyperlink{classDiameter_1_1Packet_1_1Header_1_1Flags}{Flags} \&\&moved) noexcept
-\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Move operator. \end{DoxyCompactList}\item 
+\hyperlink{classDiameter_1_1Packet_1_1Header_1_1Flags}{Flags} \& \hyperlink{classDiameter_1_1Packet_1_1Header_1_1Flags_ad83a50d504d49462093a515681b0d7b6}{operator=} (const \hyperlink{classDiameter_1_1Packet_1_1Header_1_1Flags}{Flags} \&copied)
+\begin{DoxyCompactList}\small\item\em Copy operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -145,7 +147,7 @@ Is valid.
 \mbox{\Hypertarget{classDiameter_1_1Packet_1_1Header_1_1Flags_afd99abaebff289fdc859696929fea0da}\label{classDiameter_1_1Packet_1_1Header_1_1Flags_afd99abaebff289fdc859696929fea0da}} 
 \index{Diameter\+::\+Packet\+::\+Header\+::\+Flags@{Diameter\+::\+Packet\+::\+Header\+::\+Flags}!operator=@{operator=}}
 \index{operator=@{operator=}!Diameter\+::\+Packet\+::\+Header\+::\+Flags@{Diameter\+::\+Packet\+::\+Header\+::\+Flags}}
-\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \hyperlink{classDiameter_1_1Packet_1_1Header_1_1Flags}{Diameter\+::\+Packet\+::\+Header\+::\+Flags} \& Diameter\+::\+Packet\+::\+Header\+::\+Flags\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classDiameter_1_1Packet_1_1Header_1_1Flags}{Flags} \&\&}]{moved }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 
@@ -155,6 +157,24 @@ Move operator.
 
 \begin{DoxyParams}{Parameters}
 {\em moved} & Object to be moved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to constructor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDiameter_1_1Packet_1_1Header_1_1Flags_ad83a50d504d49462093a515681b0d7b6}\label{classDiameter_1_1Packet_1_1Header_1_1Flags_ad83a50d504d49462093a515681b0d7b6}} 
+\index{Diameter\+::\+Packet\+::\+Header\+::\+Flags@{Diameter\+::\+Packet\+::\+Header\+::\+Flags}!operator=@{operator=}}
+\index{operator=@{operator=}!Diameter\+::\+Packet\+::\+Header\+::\+Flags@{Diameter\+::\+Packet\+::\+Header\+::\+Flags}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classDiameter_1_1Packet_1_1Header_1_1Flags}{Diameter\+::\+Packet\+::\+Header\+::\+Flags} \& Diameter\+::\+Packet\+::\+Header\+::\+Flags\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classDiameter_1_1Packet_1_1Header_1_1Flags}{Flags} \&}]{copied }\end{DoxyParamCaption})}
+
+
+
+Copy operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em copied} & Object to be copied. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -184,5 +204,5 @@ Reference to constructor.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/Packet.\+hpp\item 
-src/Packet\+Header\+Flags.\+cpp\end{DoxyCompactItemize}
+include/\+Diameter/Packet.\+hpp\item 
+src/\+Diameter/Packet\+Header\+Flags.\+cpp\end{DoxyCompactItemize}
