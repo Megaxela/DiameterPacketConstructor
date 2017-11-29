@@ -56,22 +56,22 @@ bool Diameter::Packet::Header::Flags::isSet(Diameter::Packet::Header::Flags::Bit
 
 bool Diameter::Packet::Header::Flags::isValid() const
 {
-    if ((m_bits & 0b00001000) != 0)
+    if ((m_bits & (1 << 3)) != 0) // 0b00001000
     {
         return false;
     }
 
-    if ((m_bits & 0b00000100) != 0)
+    if ((m_bits & (1 << 2)) != 0) // 0b00000100
     {
         return false;
     }
 
-    if ((m_bits & 0b00000010) != 0)
+    if ((m_bits & (1 << 1)) != 0) // 0b00000010
     {
         return false;
     }
 
-    if ((m_bits & 0b00000001) != 0)
+    if ((m_bits & 1) != 0) // 0b00000001
     {
         return false;
     }

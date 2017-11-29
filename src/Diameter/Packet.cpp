@@ -7,7 +7,9 @@ Diameter::Packet::Packet() :
 
 }
 
-Diameter::Packet::Packet(const ByteArray& byteArray)
+Diameter::Packet::Packet(const ByteArray& byteArray) :
+    m_header(),
+    m_avps()
 {
     m_header = Header(byteArray.mid(0, Header::Size));
 
@@ -190,4 +192,6 @@ void Diameter::Packet::deploy(ByteArray& byteArray) const
 Diameter::Packet& Diameter::Packet::updateLength()
 {
     m_header.setMessageLength(calculateLength());
+
+    return (*this);
 }
