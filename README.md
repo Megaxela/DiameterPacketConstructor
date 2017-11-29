@@ -46,6 +46,7 @@ auto packet = Diameter::Packet()
                             ByteArray::fromASCII("originHostname")
                         )
                 )
+                // Updating AVP length field, according to header and data value.
                 .updateLength()
         )
         .addAVP( // Disconnection-Cause
@@ -62,6 +63,7 @@ auto packet = Diameter::Packet()
                     Diameter::AVP::Data()
                         .setUnsigned32(0) // REBOOT
                 )
+                // Updating AVP length field, according to header and data value.
                 .updateLength()
         )
         .addAVP( // Origin-Realm
@@ -80,9 +82,12 @@ auto packet = Diameter::Packet()
                             ByteArray::fromASCII("originRealm")
                         )
                 )
+                // Updating AVP length field, according to header and data value.
                 .updateLength()
         )
+        // Updating Message length field, accordign to added AVPs
         .updateLength()
+        // Serializing Packet to ByteArray.
         .deploy();
 ```
 
