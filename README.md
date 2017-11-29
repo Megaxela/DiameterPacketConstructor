@@ -1,5 +1,5 @@
 # Diameter Packet Constructor
-It's pure C++ library for constructing and parsing Diameter packets.
+It's pure C++11 library for constructing and parsing binary Diameter packets.
 This library uses [ByteArray](https://github.com/Megaxela/ByteArray) submodule.
 
 ## Build
