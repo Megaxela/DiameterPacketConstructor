@@ -42,6 +42,21 @@ Diameter::AVP::AVP(Diameter::AVP&& moved) noexcept :
 
 }
 
+Diameter::AVP::AVP(const Diameter::AVP& copied) :
+    m_header(copied.m_header),
+    m_data(copied.m_data)
+{
+
+}
+
+Diameter::AVP& Diameter::AVP::operator=(const Diameter::AVP& copied)
+{
+    m_header = copied.m_header;
+    m_data = copied.m_data;
+
+    return (*this);
+}
+
 Diameter::AVP& Diameter::AVP::setHeader(const Diameter::AVP::Header& value)
 {
     m_header = value;

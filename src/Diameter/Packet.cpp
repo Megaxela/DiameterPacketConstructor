@@ -54,6 +54,21 @@ Diameter::Packet::Packet(Diameter::Packet&& moved) noexcept :
 
 }
 
+Diameter::Packet::Packet(const Diameter::Packet& packet) :
+    m_header(packet.m_header),
+    m_avps(packet.m_avps)
+{
+
+}
+
+Diameter::Packet& Diameter::Packet::operator=(const Diameter::Packet& copied)
+{
+    m_header = copied.m_header;
+    m_avps = copied.m_avps;
+
+    return *this;
+}
+
 Diameter::Packet& Diameter::Packet::setHeader(Header header)
 {
     m_header = std::move(header);

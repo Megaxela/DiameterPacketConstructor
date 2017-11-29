@@ -14,18 +14,6 @@ Diameter::Packet::Header::Header() :
 }
 
 
-Diameter::Packet::Header::Header(const Diameter::Packet::Header& copied) :
-    m_version(copied.m_version),
-    m_messageLength(copied.m_messageLength),
-    m_commandFlags(copied.m_commandFlags),
-    m_commandCode(copied.m_commandCode),
-    m_applicationId(copied.m_applicationId),
-    m_hopByHop(copied.m_hopByHop),
-    m_endToEnd(copied.m_endToEnd)
-{
-
-}
-
 Diameter::Packet::Header::Header(const ByteArray& array) :
     Header()
 {
@@ -53,6 +41,31 @@ Diameter::Packet::Header::Header(Diameter::Packet::Header&& moved) noexcept :
     m_endToEnd(moved.m_endToEnd)
 {
 
+}
+
+Diameter::Packet::Header::Header(const Diameter::Packet::Header& copied) :
+    m_version(copied.m_version),
+    m_messageLength(copied.m_messageLength),
+    m_commandFlags(copied.m_commandFlags),
+    m_commandCode(copied.m_commandCode),
+    m_applicationId(copied.m_applicationId),
+    m_hopByHop(copied.m_hopByHop),
+    m_endToEnd(copied.m_endToEnd)
+{
+
+}
+
+Diameter::Packet::Header& Diameter::Packet::Header::operator=(const Diameter::Packet::Header& rhs)
+{
+    m_version = rhs.m_version;
+    m_messageLength = rhs.m_messageLength;
+    m_commandFlags = rhs.m_commandFlags;
+    m_commandCode = rhs.m_commandCode;
+    m_applicationId = rhs.m_applicationId;
+    m_hopByHop = rhs.m_hopByHop;
+    m_endToEnd = rhs.m_endToEnd;
+
+    return *this;
 }
 
 Diameter::Packet::Header& Diameter::Packet::Header::setVersion(Diameter::Packet::Header::VersionType version)

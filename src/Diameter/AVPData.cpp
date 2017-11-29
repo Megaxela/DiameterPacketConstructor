@@ -18,6 +18,19 @@ Diameter::AVP::Data::Data(Diameter::AVP::Data&& moved) noexcept :
 
 }
 
+Diameter::AVP::Data::Data(const Diameter::AVP::Data& copied) :
+    m_value(copied.m_value)
+{
+
+}
+
+Diameter::AVP::Data& Diameter::AVP::Data::operator=(const Diameter::AVP::Data& rhs)
+{
+    m_value = rhs.m_value;
+
+    return *this;
+}
+
 Diameter::AVP::Data& Diameter::AVP::Data::operator=(Diameter::AVP::Data&& rhs) noexcept
 {
     m_value = std::move(rhs.m_value);

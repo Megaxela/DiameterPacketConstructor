@@ -19,6 +19,19 @@ Diameter::AVP::Header::Flags::Flags(Diameter::AVP::Header::Flags&& rhs) noexcept
 
 }
 
+Diameter::AVP::Header::Flags::Flags(const Diameter::AVP::Header::Flags& rhs) :
+    m_bits(rhs.m_bits)
+{
+
+}
+
+Diameter::AVP::Header::Flags& Diameter::AVP::Header::Flags::operator=(const Diameter::AVP::Header::Flags& rhs)
+{
+    m_bits = rhs.m_bits;
+
+    return *this;
+}
+
 Diameter::AVP::Header::Flags& Diameter::AVP::Header::Flags::setFlag(Diameter::AVP::Header::Flags::Bits bit, bool value)
 {
     if (value)

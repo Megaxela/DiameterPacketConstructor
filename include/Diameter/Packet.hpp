@@ -107,6 +107,13 @@ namespace Diameter
                  */
                 Flags& operator=(Flags&& moved) noexcept;
 
+                /**
+                 * @brief Copy operator.
+                 * @param copied Object to be copied.
+                 * @return Reference to constructor.
+                 */
+                Flags& operator=(const Flags& copied);
+
             private:
                 Type m_bits;
             };
@@ -294,7 +301,7 @@ namespace Diameter
              * @param rhs Copied object.
              * @return Reference to constructor.
              */
-            Header& operator=(const Header& rhs) = default;
+            Header& operator=(const Header& rhs);
 
             /**
              * @brief Method for deploying header as byte array.
@@ -340,7 +347,7 @@ namespace Diameter
          * @brief Copy constructor.
          * @param packet Copy constructor.
          */
-        Packet(const Packet& packet) = default;
+        Packet(const Packet& packet);
 
         /**
          * @brief Method for setting diameter packet header.
@@ -420,7 +427,7 @@ namespace Diameter
          * @param copied Copied.
          * @return Reference to constructor.
          */
-        Packet& operator=(const Packet& copied) = default;
+        Packet& operator=(const Packet& copied);
 
         /**
          * @brief Method for deploying packet as byte array.

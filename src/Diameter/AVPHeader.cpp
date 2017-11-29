@@ -47,6 +47,25 @@ Diameter::AVP::Header::Header(Diameter::AVP::Header&& moved) noexcept :
 
 }
 
+Diameter::AVP::Header::Header(const Diameter::AVP::Header& copied) :
+    m_avpCode(copied.m_avpCode),
+    m_flags(copied.m_flags),
+    m_length(copied.m_length),
+    m_vendorId(copied.m_vendorId)
+{
+
+}
+
+Diameter::AVP::Header& Diameter::AVP::Header::operator=(const Diameter::AVP::Header& rhs)
+{
+    m_avpCode = rhs.m_avpCode;
+    m_flags = rhs.m_flags;
+    m_length = rhs.m_length;
+    m_vendorId = rhs.m_vendorId;
+
+    return *this;
+}
+
 Diameter::AVP::Header& Diameter::AVP::Header::setAVPCode(Diameter::AVP::Header::AVPCodeType code)
 {
     m_avpCode = code;

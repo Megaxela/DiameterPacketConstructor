@@ -26,6 +26,14 @@ Diameter::Packet::Header::Flags::Flags(const Diameter::Packet::Header::Flags& fl
 }
 
 Diameter::Packet::Header::Flags&
+Diameter::Packet::Header::Flags::operator=(const Diameter::Packet::Header::Flags& copied)
+{
+    m_bits = copied.m_bits;
+
+    return (*this);
+}
+
+Diameter::Packet::Header::Flags&
 Diameter::Packet::Header::Flags::setFlag(Diameter::Packet::Header::Flags::Bits bit, bool value)
 {
     // Set to true

@@ -70,7 +70,7 @@ namespace Diameter
                  * @brief Copy constructor.
                  * @param rhs
                  */
-                Flags(const Flags& rhs) = default;
+                Flags(const Flags& rhs);
 
                 /**
                  * @brief Method for setting bit value.
@@ -111,7 +111,7 @@ namespace Diameter
                  * @param rhs Copied obejct.
                  * @return
                  */
-                Flags& operator=(const Flags& rhs) = default;
+                Flags& operator=(const Flags& rhs);
 
             private:
                 Type m_bits;
@@ -138,7 +138,7 @@ namespace Diameter
              * @brief Copy constructor.
              * @param copied Copy.
              */
-            Header(const Header& copied) = default;
+            Header(const Header& copied);
 
             /**
              * @brief Method for setting AVP code.
@@ -257,7 +257,7 @@ namespace Diameter
              * @param rhs Copied object.
              * @return Reference to constructor.
              */
-            Header& operator=(const Header& rhs) = default;
+            Header& operator=(const Header& rhs);
 
         private:
             AVPCodeType m_avpCode;
@@ -299,7 +299,7 @@ namespace Diameter
              * @brief Copy constructor.
              * @param copied Copied.
              */
-            Data(const Data& copied) = default;
+            Data(const Data& copied);
 
             /**
              * @brief Method for setting byte array as data.
@@ -445,7 +445,7 @@ namespace Diameter
              * @param rhs Copied object.
              * @return Reference to constructor.
              */
-            Data& operator=(const Data& rhs) = default;
+            Data& operator=(const Data& rhs);
 
         private:
             ByteArray m_value;
@@ -473,7 +473,7 @@ namespace Diameter
          * @brief Copy constructor.
          * @param copied Copied.
          */
-        AVP(const AVP& copied) = default;
+        AVP(const AVP& copied);
 
         /**
          * @brief Method for setting AVP's header.
@@ -531,7 +531,7 @@ namespace Diameter
          * @param copied Copied.
          * @return Reference to constructor.
          */
-        AVP& operator=(const AVP& copied) = default;
+        AVP& operator=(const AVP& copied);
 
         /**
          * @brief Method for calculating actual
