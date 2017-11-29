@@ -161,5 +161,9 @@ void Diameter::AVP::Header::deploy(ByteArray& byteArray) const
     byteArray.append(m_avpCode);
     byteArray.append(m_flags.deploy());
     byteArray.appendPart(m_length, 3);
-    byteArray.append(m_vendorId);
+
+    if (m_flags.isSet(Flags::Bits::VendorSpecific))
+    {
+        byteArray.append(m_vendorId);
+    }
 }

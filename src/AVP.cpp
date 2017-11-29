@@ -88,19 +88,22 @@ Diameter::AVP& Diameter::AVP::operator=(Diameter::AVP&& moved) noexcept
     return *this;
 }
 
-Diameter::AVP::Header::LengthType Diameter::AVP::calculateLength() const
+Diameter::AVP::Header::LengthType Diameter::AVP::calculateLength(bool includePadding) const
 {
     auto headerSize = m_header.calculateSize();
     auto dataSize = m_data.size();
 
-    dataSize = (dataSize + 3) & 0xFFFFFFFC;
+    if (includePadding)
+    {
+        dataSize = (dataSize + 3) & 0xFFFFFFFC;
+    }
 
     return headerSize + dataSize;
 }
 
 Diameter::AVP& Diameter::AVP::updateLength()
 {
-    m_header.setAVPLength(calculateLength());
+    m_header.setAVPLength(calculateLength(false));
 
     return *this;
 }
@@ -120,7 +123,7 @@ void Diameter::AVP::deploy(ByteArray& byteArray) const
 
 ByteArray Diameter::AVP::deploy() const
 {
-    ByteArray byteArray(calculateLength());
+    ByteArray byteArray(calculateLength(true));
 
     deploy(byteArray);
 

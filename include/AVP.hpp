@@ -47,7 +47,7 @@ namespace Diameter
                 {
                       VendorSpecific = 0b10000000
                     , Mandatory      = 0b01000000
-                    , P              = 0b00100000
+                    , Protected      = 0b00100000
                 };
 
                 /**
@@ -538,7 +538,7 @@ namespace Diameter
          * avp length.
          * @return AVP length.
          */
-        AVP::Header::LengthType calculateLength() const;
+        Diameter::AVP::Header::LengthType calculateLength(bool includePadding) const;
 
         /**
          * @brief Method for updating length value.

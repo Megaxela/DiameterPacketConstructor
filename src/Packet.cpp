@@ -9,6 +9,41 @@ Diameter::Packet::Packet() :
 
 Diameter::Packet::Packet(const ByteArray& byteArray)
 {
+    m_header = Header(byteArray.mid(0, Header::Size));
+
+    // Trying to calculate things
+    uint32_t pointer = Header::Size;
+
+    while (pointer < byteArray.size())
+    {
+        // Trying to read AVP length
+        if (pointer + AVP::Header::MinSize >= byteArray.size())
+        {
+            throw std::invalid_argument("Data has no any AVPs");
+        }
+
+        AVP::Header header(
+            byteArray.mid(
+                pointer,
+                AVP::Header::MinSize
+            )
+        );
+
+        auto realLength = header.length();
+
+        // Performing /4 padding
+        realLength = (realLength + 3) & 0xFFFFFFFC;
+
+        // Can this be size?
+        if (pointer + realLength > byteArray.size())
+        {
+            throw std::invalid_argument("Data has no any AVPs");
+        }
+
+        m_avps.emplace_back(byteArray.mid(pointer, realLength));
+
+        pointer += realLength;
+    }
 
 }
 
@@ -112,7 +147,7 @@ Diameter::Packet::Header::MessageLengthType Diameter::Packet::calculateLength() 
 
     for (auto&& avp : m_avps)
     {
-        length += avp.calculateLength();
+        length += avp.calculateLength(true);
     }
 
     return length;

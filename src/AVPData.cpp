@@ -126,8 +126,6 @@ Diameter::AVP::Data::AVPContainer Diameter::AVP::Data::toAVPs() const
     }
 
     // Trying to calculate things
-    uint32_t count = 0;
-
     uint32_t pointer = 0;
 
     while (pointer < m_value.size())
