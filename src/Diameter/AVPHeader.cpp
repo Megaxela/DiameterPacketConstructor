@@ -31,7 +31,7 @@ Diameter::AVP::Header::Header(const ByteArray& byteArray) :
     {
         if (byteArray.size() < MaxSize)
         {
-            throw std::invalid_argument("Can't parse AVP Header: Vendor Specific bit is set, but data is too small.");
+            return;
         }
 
         m_vendorId = byteArray.read<VendorIdType>(8);

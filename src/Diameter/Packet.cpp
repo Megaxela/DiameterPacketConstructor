@@ -24,12 +24,10 @@ Diameter::Packet::Packet(const ByteArray& byteArray) :
             throw std::invalid_argument("Data has no any AVPs");
         }
 
-        AVP::Header header(
-            byteArray.mid(
-                pointer,
-                AVP::Header::MinSize
-            )
-        );
+        AVP::Header header(byteArray.mid(
+                    pointer,
+                    AVP::Header::MinSize
+                ));
 
         auto realLength = header.length();
 
