@@ -2,8 +2,8 @@
 #include <gtest/gtest.h>
 #include <Diameter/Packet.hpp>
 
-static ByteArray raw = ByteArray::fromHex(
-    "010000648000011a000000007ddf9367"
+static const ByteArray raw = ByteArray::fromHex(
+        "010000648000011a000000007ddf9367"
         "c15ecb1200000108400000206e312e63"
         "7573746f6d2e7463702e736572766572"
         "2e636f6d000001114000000c00000000"

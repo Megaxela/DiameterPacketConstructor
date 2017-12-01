@@ -24,10 +24,12 @@ Diameter::Packet::Packet(const ByteArray& byteArray) :
             throw std::invalid_argument("Data has no any AVPs");
         }
 
-        AVP::Header header(byteArray.mid(
-                    pointer,
-                    AVP::Header::MinSize
-                ));
+        AVP::Header header(
+            byteArray.mid(
+                pointer,
+                AVP::Header::MinSize
+            )
+        );
 
         auto realLength = header.length();
 
@@ -145,7 +147,8 @@ bool Diameter::Packet::isValid() const
         }
     }
 
-    return true;
+    return m_header.messageLength() == calculateLength();
+
 }
 
 Diameter::Packet& Diameter::Packet::operator=(Diameter::Packet&& moved) noexcept
@@ -168,17 +171,25 @@ Diameter::Packet::Header::MessageLengthType Diameter::Packet::calculateLength() 
     return length;
 }
 
-ByteArray Diameter::Packet::deploy() const
+ByteArray Diameter::Packet::deploy(bool checkValid) const
 {
     ByteArray result(calculateLength());
 
-    deploy(result);
+    deploy(result, checkValid);
 
     return result;
 }
 
-void Diameter::Packet::deploy(ByteArray& byteArray) const
+void Diameter::Packet::deploy(ByteArray& byteArray, bool checkValid) const
 {
+    if (checkValid)
+    {
+        if (!isValid())
+        {
+            throw std::logic_error("Packet is not valid");
+        }
+    }
+
     m_header.deploy(byteArray);
 
     for (auto&& avp : m_avps)

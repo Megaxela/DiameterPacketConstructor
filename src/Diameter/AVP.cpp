@@ -92,7 +92,14 @@ Diameter::AVP::Data& Diameter::AVP::data()
 
 bool Diameter::AVP::isValid() const
 {
-    return m_header.isValid() && m_data.isValid();
+    auto step = m_header.isValid() && m_data.isValid();
+
+    if (!step)
+    {
+        return false;
+    }
+
+    return m_header.length() == calculateLength(false);
 }
 
 Diameter::AVP& Diameter::AVP::operator=(Diameter::AVP&& moved) noexcept

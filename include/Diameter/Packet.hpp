@@ -433,7 +433,7 @@ namespace Diameter
          * @brief Method for deploying packet as byte array.
          * @return Byte array.
          */
-        ByteArray deploy() const;
+        ByteArray deploy(bool checkValid=true) const;
 
         /**
          * @brief Method for calculating actual packet length.
@@ -452,7 +452,7 @@ namespace Diameter
          * Packet will be appended to deploy.
          * @param byteArray Byte array.
          */
-        void deploy(ByteArray& byteArray) const;
+        void deploy(ByteArray& byteArray, bool checkValid=true) const;
 
     private:
 
