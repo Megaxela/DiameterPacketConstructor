@@ -3,10 +3,11 @@ project(DiameterPacketConstructor)
 
 set(CMAKE_CXX_STANDARD 11)
 
-option(DIAMETER_BUILD_TESTS "Build tests for packet constructor" OFF)
+option(DIAMETER_BUILD_TESTS "Build tests and benchmark for packet constructor" OFF)
 
 if (${DIAMETER_BUILD_TESTS})
     add_subdirectory(tests)
+    add_subdirectory(benchmark)
 endif()
 
 set(INCLUDE_FILES
@@ -33,7 +34,7 @@ target_include_directories(DiameterPacketConstructor PUBLIC
         ./include
 )
 
-if (EXISTS libraries/ByteArray/include)
+if (EXISTS "${CMAKE_CURRENT_LIST_DIR}/libraries/ByteArray/include")
     add_subdirectory(libraries/ByteArray)
 endif()
 
