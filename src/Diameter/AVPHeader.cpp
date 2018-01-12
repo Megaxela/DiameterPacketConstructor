@@ -100,7 +100,7 @@ Diameter::AVP::Header::Flags& Diameter::AVP::Header::flags()
     return m_flags;
 }
 
-Diameter::AVP::Header& Diameter::AVP::Header::setAVPLength(uint32_t length)
+Diameter::AVP::Header& Diameter::AVP::Header::setAVPLength(LengthType length)
 {
     m_length = length;
 

@@ -186,7 +186,7 @@ namespace Diameter
              * @param length AVP length. Available values [0, 16777215]
              * @return Reference to constructor.
              */
-            Header& setAVPLength(uint32_t length);
+            Header& setAVPLength(LengthType length);
 
             /**
              * @brief Method for getting AVP length.
@@ -324,6 +324,8 @@ namespace Diameter
 
             /**
              * @brief Method for getting signed 32 bit integer.
+             * If it's not 32 bit integer, std::invalid_argument
+             * exception will be thrown.
              * @return Value.
              */
             int32_t toInteger32() const;
@@ -339,6 +341,8 @@ namespace Diameter
             /**
              * @brief Method for getting signed 64 bit
              * integer.
+             * If it's not 64 bit integer, std::invalid_argument
+             * exception will be thrown.
              * @return Value.
              */
             int64_t toInteger64() const;
@@ -354,6 +358,8 @@ namespace Diameter
             /**
              * @brief Method for getting unsigned 32 bit
              * integer.
+             * If it's not 32 bit integer, std::invalid_argument
+             * exception will be thrown.
              * @return Value.
              */
             uint32_t toUnsigned32() const;
@@ -369,6 +375,8 @@ namespace Diameter
             /**
              * @brief Method for getting unsigned 64 bit
              * integer.
+             * If it's not 64 bit integer, std::invalid_argument
+             * exception will be thrown.
              * @return Value.
              */
             uint64_t toUnsigned64() const;
@@ -376,7 +384,7 @@ namespace Diameter
             /**
              * @brief Method for getting avps
              * from data value. If it's impossible
-             * std::invalid_argument exceptionw will
+             * std::invalid_argument exception will
              * be thrown.
              * @return Container with AVPs.
              */
