@@ -319,7 +319,7 @@ namespace Packet { namespace Header
 
 BENCHMARK_NS(Packet::Header::DefaultConstruction);
 BENCHMARK_NS(Packet::Header::Copy);
-BENCHMARK_NS(Packet::Header::Move)->Arg(2);
+BENCHMARK_NS(Packet::Header::Move);
 
 BENCHMARK_NS(Packet::Header::SetVersion)         ->Arg(1);
 BENCHMARK_NS(Packet::Header::SetVersionReference)->Arg(1);

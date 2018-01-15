@@ -111,7 +111,7 @@ namespace Packet { namespace Header { namespace Flags {
 
 BENCHMARK_NS(Packet::Header::Flags::DefaultConstruction);
 BENCHMARK_NS(Packet::Header::Flags::Copy);
-BENCHMARK_NS(Packet::Header::Flags::Move)->Arg(2);
+BENCHMARK_NS(Packet::Header::Flags::Move);
 BENCHMARK_NS(Packet::Header::Flags::SetFlag);
 BENCHMARK_NS(Packet::Header::Flags::IsSet);
 BENCHMARK_NS(Packet::Header::Flags::IsValid);

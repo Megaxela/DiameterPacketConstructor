@@ -46,9 +46,14 @@ namespace AVP { namespace Data
     {
         Diameter::AVP::Data data;
 
-        data.setOctetString(
-            ByteArray::fromHex("00112233445566778899AABBCCDDEEFF")
+        ByteArray byteArray;
+
+        byteArray.appendMultiple<uint8_t>(
+            0xAA,
+            static_cast<ByteArray::size_type>(state.range(0))
         );
+
+        data.setOctetString(byteArray);
 
         for (auto _ : state)
         {
@@ -62,9 +67,14 @@ namespace AVP { namespace Data
     {
         Diameter::AVP::Data data;
 
-        data.setOctetString(
-            ByteArray::fromHex("00112233445566778899AABBCCDDEEFF")
+        ByteArray byteArray;
+
+        byteArray.appendMultiple<uint8_t>(
+            0xAA,
+            static_cast<ByteArray::size_type>(state.range(0))
         );
+
+        data.setOctetString(byteArray);
 
         for (auto _ : state)
         {
@@ -74,6 +84,8 @@ namespace AVP { namespace Data
 
             data = std::move(copy);
         }
+
+        state.SetComplexityN(state.range(0));
     }
 
     static void SetOctetString(benchmark::State& state)
@@ -442,9 +454,13 @@ namespace AVP { namespace Data
 
 BENCHMARK_NS(AVP::Data::DefaultConstruction);
 BENCHMARK_NS(AVP::Data::CopyEmpty);
-BENCHMARK_NS(AVP::Data::CopyWithData);
-BENCHMARK_NS(AVP::Data::MoveEmpty)->Arg(2);
-BENCHMARK_NS(AVP::Data::MoveWithData)->Arg(2);
+BENCHMARK_NS(AVP::Data::CopyWithData)
+    ->Range(1, 1 << 20)
+    ->Complexity();
+BENCHMARK_NS(AVP::Data::MoveEmpty);
+BENCHMARK_NS(AVP::Data::MoveWithData)
+    ->Range(1, 1 << 20)
+    ->Complexity();
 
 BENCHMARK_NS(AVP::Data::SetOctetString);
 BENCHMARK_NS(AVP::Data::ToOctetStringEmpty);

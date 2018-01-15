@@ -21,7 +21,7 @@ namespace AVP
 
         for (auto _ : state)
         {
-            auto copy = avp;
+            Diameter::AVP copy(avp);
 
             benchmark::DoNotOptimize(copy);
         }
@@ -31,11 +31,18 @@ namespace AVP
     {
         Diameter::AVP avp;
 
-        avp.setData(Diameter::AVP::Data(ByteArray::fromHex("AABBCCDDEEFF")));
+        ByteArray byteArray;
+
+        byteArray.appendMultiple<uint8_t>(
+            0xAA,
+            static_cast<ByteArray::size_type>(state.range(0))
+        );
+
+        avp.setData(Diameter::AVP::Data(byteArray));
 
         for (auto _ : state)
         {
-            auto copy = avp;
+            Diameter::AVP copy(avp);
 
             benchmark::DoNotOptimize(copy);
         }
@@ -59,16 +66,25 @@ namespace AVP
     {
         Diameter::AVP avp;
 
-        avp.setData(Diameter::AVP::Data(ByteArray::fromHex("AABBCCDDEEFF")));
+        ByteArray byteArray;
+
+        byteArray.appendMultiple<uint8_t>(
+            0xAA,
+            static_cast<ByteArray::size_type>(state.range(0))
+        );
+
+        avp.setData(Diameter::AVP::Data(byteArray));
 
         for (auto _ : state)
         {
-            auto copy = avp;
+            auto copy = std::move(avp);
 
             benchmark::DoNotOptimize(copy);
 
             avp = std::move(copy);
         }
+
+        state.SetComplexityN(state.range(0));
     }
 
     static void SetHeader(benchmark::State& state)
@@ -283,9 +299,13 @@ namespace AVP
 
 BENCHMARK_NS(AVP::DefaultConstruction);
 BENCHMARK_NS(AVP::CopyEmpty);
-BENCHMARK_NS(AVP::CopyWithData);
-BENCHMARK_NS(AVP::MoveEmpty)->Arg(2);
-BENCHMARK_NS(AVP::MoveWithData)->Arg(2);
+BENCHMARK_NS(AVP::CopyWithData)
+    ->Range(1, 1 << 20)
+    ->Complexity();
+BENCHMARK_NS(AVP::MoveEmpty);
+BENCHMARK_NS(AVP::MoveWithData)
+    ->Range(1, 1 << 20)
+    ->Complexity();
 
 BENCHMARK_NS(AVP::SetHeader);
 BENCHMARK_NS(AVP::SetHeaderReference);

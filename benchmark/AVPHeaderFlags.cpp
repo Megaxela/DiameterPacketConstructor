@@ -110,7 +110,7 @@ namespace AVP{ namespace Header{ namespace Flags {
 }}}
 BENCHMARK_NS(AVP::Header::Flags::DefaultConstruction);
 BENCHMARK_NS(AVP::Header::Flags::Copy);
-BENCHMARK_NS(AVP::Header::Flags::Move)->Arg(2);
+BENCHMARK_NS(AVP::Header::Flags::Move);
 BENCHMARK_NS(AVP::Header::Flags::SetFlag);
 BENCHMARK_NS(AVP::Header::Flags::IsSet);
 BENCHMARK_NS(AVP::Header::Flags::IsValid);

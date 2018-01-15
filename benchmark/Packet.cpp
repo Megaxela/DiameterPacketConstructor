@@ -5,14 +5,17 @@
 #include "bench_extend/NamespaceRegistrator.hpp"
 
 namespace {
-    Diameter::AVP generateAVP()
+    Diameter::AVP generateAVP(uint32_t size)
     {
+        ByteArray byteArray;
+
+        byteArray.appendMultiple<uint8_t>(
+            0xAA,
+            size
+        );
+
         return Diameter::AVP()
-            .setData(
-                Diameter::AVP::Data(
-                    ByteArray::fromHex("AABBCCDDEEFF")
-                )
-            )
+            .setData(Diameter::AVP::Data(byteArray))
             .updateLength();
     }
     
@@ -90,7 +93,11 @@ namespace Packet
 
         for (int i = 0; i < state.range(0); ++i)
         {
-            packet.addAVP(generateAVP());
+            packet.addAVP(
+                generateAVP(
+                    static_cast<uint32_t>(state.range(1))
+                )
+            );
         }
 
         for (auto _ : state)
@@ -109,7 +116,11 @@ namespace Packet
 
         for (int i = 0; i < state.range(0); ++i)
         {
-            packet.addAVP(generateAVP());
+            packet.addAVP(
+                generateAVP(
+                    static_cast<uint32_t>(state.range(1))
+                )
+            );
         }
 
         for (auto _ : state)
@@ -160,7 +171,9 @@ namespace Packet
 
     static void AddAVP(benchmark::State& state)
     {
-        auto avp = generateAVP();
+        auto avp = generateAVP(
+            static_cast<uint32_t>(state.range(0))
+        );
 
         for (auto _ : state)
         {
@@ -173,7 +186,9 @@ namespace Packet
     {
         Diameter::Packet packet;
 
-        auto avp = generateAVP();
+        auto avp = generateAVP(
+            static_cast<uint32_t>(state.range(1))
+        );
 
         int i;
         for (i = 0; i < state.range(0); ++i)
@@ -195,7 +210,7 @@ namespace Packet
     {
         Diameter::Packet packet;
         
-        auto avp = generateAVP();
+        auto avp = generateAVP(32);
         
         int i;
         for (i = 0; i < state.range(0); ++i)
@@ -214,7 +229,7 @@ namespace Packet
         
         for (auto _ : state)
         {
-            packet.replaceAVP(avp, i);
+            packet.replaceAVP(avp, static_cast<uint32_t>(i));
         }
     }
     
@@ -476,22 +491,24 @@ namespace Packet
 
 BENCHMARK_NS(Packet::DefaultConstruction);
 BENCHMARK_NS(Packet::CopyEmpty);
-BENCHMARK_NS(Packet::MoveEmpty)->Arg(2);
+BENCHMARK_NS(Packet::MoveEmpty);
 BENCHMARK_NS(Packet::CopyWithData)
-    ->Range(1, 1 << 20)
+    ->Ranges({{1, 1 << 20}, {1, 1 << 10}})
     ->Complexity();
 
 BENCHMARK_NS(Packet::MoveWithData)
-    ->Arg(2)
-    ->Range(1, 1 << 20)
+    ->Ranges({{1, 1 << 20}, {1, 1 << 10}})
     ->Complexity();
 
 BENCHMARK_NS(Packet::SetHeader);
 BENCHMARK_NS(Packet::SetHeaderReference);
 BENCHMARK_NS(Packet::Header);
-BENCHMARK_NS(Packet::AddAVP);
-BENCHMARK_NS(Packet::AvpLast)
+BENCHMARK_NS(Packet::AddAVP)
     ->Range(1, 1 << 20)
+    ->Complexity();
+
+BENCHMARK_NS(Packet::AvpLast)
+    ->Ranges({{1, 1 << 20}, {1, 1 << 10}})
     ->Complexity();
 
 BENCHMARK_NS(Packet::ReplacePreLastAVP)

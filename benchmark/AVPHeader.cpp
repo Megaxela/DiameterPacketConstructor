@@ -250,7 +250,7 @@ namespace AVP { namespace Header
 
 BENCHMARK_NS(AVP::Header::DefaultConstruction)->Arg(12);
 BENCHMARK_NS(AVP::Header::Copy);
-BENCHMARK_NS(AVP::Header::Move)->Arg(2);
+BENCHMARK_NS(AVP::Header::Move);
 
 BENCHMARK_NS(AVP::Header::SetAVPCode)         ->Arg(222);
 BENCHMARK_NS(AVP::Header::SetAVPCodeReference)->Arg(222);
