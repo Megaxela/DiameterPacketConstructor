@@ -404,6 +404,13 @@ namespace Diameter
         Packet& replaceAVP(AVP avp, uint32_t index);
 
         /**
+         * @brief Method for erasing AVP.
+         * @param index AVP index.
+         * @return Reference to constructor.
+         */
+        Packet& eraseAVP(uint32_t index);
+
+        /**
          * @brief Method for getting number of AVPs.
          * @return Number of AVPs.
          */

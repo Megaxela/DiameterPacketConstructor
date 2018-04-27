@@ -204,3 +204,12 @@ Diameter::Packet& Diameter::Packet::updateLength()
 
     return (*this);
 }
+
+Diameter::Packet& Diameter::Packet::eraseAVP(uint32_t index)
+{
+    m_avps.erase(
+        m_avps.begin() + index
+    );
+
+    return (*this);
+}

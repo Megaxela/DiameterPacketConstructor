@@ -201,7 +201,8 @@ Diameter::Packet::Header::ETEType& Diameter::Packet::Header::eteIdentifier()
 bool Diameter::Packet::Header::isValid() const
 {
     return m_commandFlags.isValid() &&
-           m_commandCode <= 16777215;
+           m_commandCode <= 16777215 &&
+           m_version == 1 ;
 }
 
 Diameter::Packet::Header& Diameter::Packet::Header::operator=(Diameter::Packet::Header&& moved) noexcept
